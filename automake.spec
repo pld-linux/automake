@@ -66,11 +66,11 @@ gzip -9nf $RPM_BUILD_ROOT/usr/{info/*info*,man/man1/*} \
 	AUTHORS ChangeLog NEWS README THANKS TODO
 
 %post
-/sbin/install-info /usr/info/automake.info.gz /etc/info-dir
+/sbin/install-info %{_infodir}/automake.info.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/info/automake.info.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/automake.info.gz /etc/info-dir
 fi
 
 %clean
@@ -80,10 +80,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO}.gz
 %attr(755,root,root) /usr/bin/*
-/usr/info/automake*
+%{_infodir}/automake*
 
 /usr/share/aclocal
-/usr/man/man1/*
+%{_mandir}/man1/*
 
 %dir /usr/share/automake
 /usr/share/automake/*.am
