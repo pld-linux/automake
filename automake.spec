@@ -95,18 +95,18 @@ ln -sf %{_veramsub} $RPM_BUILD_ROOT%{_datadir}/automake
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
+%pre
 # upgrade from am < 1.6 (when /usr/share/{aclocal,automake} were directories)
 # step 1: save directories
-%pre
-if [ -d %{_aclocaldir} ]; then
+if [ -d %{_aclocaldir} -a ! -L %{_aclocaldir} ]; then
 	mv -f %{_aclocaldir} %{_datadir}/aclocal.rpmtmp
 fi
-if [ -d %{_datadir}/automake ]; then
+if [ -d %{_datadir}/automake -a ! -L %{_datadir}/automake ]; then
 	mv -f %{_datadir}/automake %{_datadir}/automake.rpmtmp
 fi
 
-# step 2: prevent removing of new files, allow to remove old
 %triggerun -- automake < 1.6
+# step 2: prevent removing of new files, allow to remove old
 if [ -d %{_datadir}/aclocal.rpmtmp ]; then
 	rm -f %{_aclocaldir}
 	ln -sf aclocal.rpmtmp %{_aclocaldir}
@@ -116,8 +116,8 @@ if [ -d %{_datadir}/automake.rpmtmp ]; then
 	ln -sf automake.rpmtmp %{_datadir}/automake
 fi
 
-# step 3: restore proper symlinks and move back remaining _aclocaldir contents
 %triggerpostun -- automake < 1.6
+# step 3: restore proper symlinks and move back remaining _aclocaldir contents
 if [ -d %{_datadir}/aclocal.rpmtmp ]; then
 	rm -f %{_aclocaldir}
 	ln -sf %{_veralsub} %{_aclocaldir}
