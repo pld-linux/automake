@@ -24,6 +24,7 @@ Patch3:		%{name}-py_compile.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	rpm-perlprov
+BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
 Requires:	perl-base
 Requires:	perl(File::Glob)
