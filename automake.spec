@@ -63,7 +63,7 @@ fi
 %files
 %defattr(644, root, root, 755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
-/usr/bin/*
+%attr(755, root, root) /usr/bin/*
 /usr/info/automake*
 %attr(-, root, root) /usr/share/*
 
