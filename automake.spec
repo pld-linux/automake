@@ -9,7 +9,7 @@ Summary(pt_BR):	GNU automake - ferramentas de configuração de Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.5
-Release:	7.5
+Release:	8
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
