@@ -1,0 +1,60 @@
+diff -Nur automake-1.4.orig/Makefile.in automake-1.4/Makefile.in
+--- automake-1.4.orig/Makefile.in	Fri Nov 26 10:04:43 1999
++++ automake-1.4/Makefile.in	Sat Nov 27 12:50:23 1999
+@@ -40,9 +40,9 @@
+ 
+ top_builddir = .
+ 
+-ACLOCAL = @ACLOCAL@
++ACLOCAL = ./aclocal --acdir=./m4
+ AUTOCONF = @AUTOCONF@
+-AUTOMAKE = @AUTOMAKE@
++AUTOMAKE = ./automake --amdir=.
+ AUTOHEADER = @AUTOHEADER@
+ 
+ INSTALL = @INSTALL@
+diff -Nur automake-1.4.orig/aclocal.m4 automake-1.4/aclocal.m4
+--- automake-1.4.orig/aclocal.m4	Fri Nov 26 10:04:43 1999
++++ automake-1.4/aclocal.m4	Sat Nov 27 12:52:14 1999
+@@ -36,9 +36,9 @@
+ AC_REQUIRE([AC_ARG_PROGRAM])
+ dnl FIXME This is truly gross.
+ missing_dir=`cd $ac_aux_dir && pwd`
+-AM_MISSING_PROG(ACLOCAL, aclocal, $missing_dir)
++# AM_MISSING_PROG(ACLOCAL, aclocal, $missing_dir)
+ AM_MISSING_PROG(AUTOCONF, autoconf, $missing_dir)
+-AM_MISSING_PROG(AUTOMAKE, automake, $missing_dir)
++# AM_MISSING_PROG(AUTOMAKE, automake, $missing_dir)
+ AM_MISSING_PROG(AUTOHEADER, autoheader, $missing_dir)
+ AM_MISSING_PROG(MAKEINFO, makeinfo, $missing_dir)
+ AC_REQUIRE([AC_PROG_MAKE_SET])])
+diff -Nur automake-1.4.orig/m4/Makefile.in automake-1.4/m4/Makefile.in
+--- automake-1.4.orig/m4/Makefile.in	Fri Nov 26 10:04:43 1999
++++ automake-1.4/m4/Makefile.in	Sat Nov 27 12:50:23 1999
+@@ -40,9 +40,9 @@
+ 
+ top_builddir = ..
+ 
+-ACLOCAL = @ACLOCAL@
++ACLOCAL = ../aclocal --acdir=.
+ AUTOCONF = @AUTOCONF@
+-AUTOMAKE = @AUTOMAKE@
++AUTOMAKE = ../automake --amdir=..
+ AUTOHEADER = @AUTOHEADER@
+ 
+ INSTALL = @INSTALL@
+diff -Nur automake-1.4.orig/tests/Makefile.in automake-1.4/tests/Makefile.in
+--- automake-1.4.orig/tests/Makefile.in	Fri Nov 26 10:04:43 1999
++++ automake-1.4/tests/Makefile.in	Sat Nov 27 12:50:23 1999
+@@ -40,9 +40,9 @@
+ 
+ top_builddir = ..
+ 
+-ACLOCAL = @ACLOCAL@
++ACLOCAL = ../aclocal --acdir=../m4
+ AUTOCONF = @AUTOCONF@
+-AUTOMAKE = @AUTOMAKE@
++AUTOMAKE = ../automake --amdir=..
+ AUTOHEADER = @AUTOHEADER@
+ 
+ INSTALL = @INSTALL@
