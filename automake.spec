@@ -6,15 +6,16 @@ Summary(fr):	automake de GNU - Outils de configuration des makefiles
 Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
-Version:	1.4d
+Version:	1.4p4
 Release:	3
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
-Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
+Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-1.4-p4.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
+Patch2:		%{name}-libtoolize.patch
 URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf
 BuildRequires:	perl
@@ -50,12 +51,16 @@ dosyalarýndan esinlenilmistir, ama amaç taþýnabilir olmak ve Makefile
 deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 
 %prep
-%setup -q
+%setup -q -n %{name}-1.4-p4
 %patch0 -p1
 %{!?_without_man:%patch1 -p1}
+%patch2 -p1
 
 %build
-%{!?_without_man:automake}
+%{!?_without_man:rm -f missing}
+aclocal
+autoconf
+%{!?_without_man:automake -a -c}
 %configure
 %{__make}
 
@@ -86,14 +91,15 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_datadir}/automake
 %{_datadir}/automake/*.am
+%{_datadir}/automake/COPYING
+%{_datadir}/automake/INSTALL
 %{_datadir}/automake/texinfo.tex
+%attr(755,root,root) %{_datadir}/automake/acinstall
 %attr(755,root,root) %{_datadir}/automake/config.guess
 %attr(755,root,root) %{_datadir}/automake/config.sub
-%attr(755,root,root) %{_datadir}/automake/depcomp
+%attr(755,root,root) %{_datadir}/automake/elisp-comp
 %attr(755,root,root) %{_datadir}/automake/install-sh
 %attr(755,root,root) %{_datadir}/automake/mdate-sh
-%attr(755,root,root) %{_datadir}/automake/elisp-comp
-%attr(755,root,root) %{_datadir}/automake/acinstall
 %attr(755,root,root) %{_datadir}/automake/ylwrap
 %attr(755,root,root) %{_datadir}/automake/mkinstalldirs
 %attr(755,root,root) %{_datadir}/automake/missing
