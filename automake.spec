@@ -97,9 +97,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/automake/ylwrap
 %attr(755,root,root) %{_datadir}/automake/mkinstalldirs
 %attr(755,root,root) %{_datadir}/automake/missing
-
-%changelog
-* Thu Jun 10 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4-6]
-- based on RH spec,
-- spec rewrited by PLD team.
