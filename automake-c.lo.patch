@@ -1,0 +1,11 @@
+--- automake-1.6b/lib/am/depend2.am.wiget	Wed Aug  7 16:07:22 2002
++++ automake-1.6b/lib/am/depend2.am	Wed Aug  7 16:07:58 2002
+@@ -82,7 +82,7 @@
+ if %FASTDEP%
+ ## In fast-dep mode, we can always use -o.
+ 	if %LTCOMPILE% -MT %LTOBJ% -MD -MP -MF "%DEPBASE%.Tpo" \
+-	  %-c% -o %LTOBJ% `test -f '%SOURCE%' || echo '$(srcdir)/'`%SOURCE% \
++	  %-c% -o %LTOBJ% `test -f '%SOURCE%' || echo '$(srcdir)/'`%SOURCE%; \
+ 	then mv "%DEPBASE%.Tpo" "%DEPBASE%.Po"; \
+ 	else rm -f "%DEPBASE%.Tpo"; exit 1; \
+ 	fi
