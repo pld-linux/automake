@@ -7,7 +7,8 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(pt_BR):	GNU automake - ferramentas de configuração de Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
-Version:	1.6
+Version:	1.6.1
+%define	_mver	%(echo %{version} | cut -d"." -f1-2)
 Release:	1
 License:	GPL
 Group:		Development/Building
@@ -25,8 +26,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
 %define		_aclocaldir	%{_datadir}/aclocal
-%define		_veramsub	automake-%{version}
-%define		_veralsub	aclocal-%{version}
+%define		_veramsub	automake-%{_mver}
+%define		_veralsub	aclocal-%{_mver}
 %define		_veramdir	%{_datadir}/%{_veramsub}
 %define		_veraldir	%{_datadir}/%{_veralsub}
 
