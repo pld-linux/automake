@@ -7,7 +7,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(pt_BR):	GNU automake - ferramentas de configuração de Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
-Version:	1.6.1
+Version:	1.6.2
 %define	_mver	%(echo %{version} | cut -d"." -f1-2)
 Release:	1
 License:	GPL
