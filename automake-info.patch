@@ -1,9 +1,8 @@
-diff -Nru automake-1.7.5b.orig/automake.texi automake-1.7.5b/automake.texi
---- automake-1.7.5b.orig/automake.texi	2003-07-05 00:03:41.000000000 +0200
-+++ automake-1.7.5b/automake.texi	2003-07-05 11:03:40.000000000 +0200
-@@ -7,14 +7,10 @@
- 
- @include version.texi
+--- automake-1.8/doc/automake.texi.orig	2003-12-09 19:11:18.000000000 +0100
++++ automake-1.8/doc/automake.texi	2003-12-12 23:57:21.535461008 +0100
+@@ -33,14 +33,10 @@
+ @end quotation
+ @end copying
  
 -@dircategory Software development
 +@dircategory Programming tools:
@@ -18,8 +17,8 @@ diff -Nru automake-1.7.5b.orig/automake.texi automake-1.7.5b/automake.texi
 +* aclocal: (automake)aclocal.		Generating aclocal.m4.
  @end direntry
  
- @ifinfo
-@@ -1107,7 +1103,7 @@
+ @titlepage
+@@ -1095,7 +1091,7 @@
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -28,34 +27,18 @@ diff -Nru automake-1.7.5b.orig/automake.texi automake-1.7.5b/automake.texi
  * aclocal options::             aclocal command line arguments
  * Macro search path::           Modifying aclocal's search path
  * Macros::                      Autoconf macros supplied with Automake
-@@ -1145,7 +1141,7 @@
+@@ -1314,12 +1310,12 @@
+ can appear in @file{aclocal.m4} when @command{aclocal} detects that
+ some required macros come from files local to your package (as
+ opposed to macros installed in a system-wide directory, see
+-@ref{Invoking aclocal}).
++@ref{aclocal}).
+ 
  @end table
  
  
--@node Optional, Invoking aclocal, Requirements, configure
-+@node Optional, aclocal, Requirements, configure
- @section Other things Automake recognizes
- 
- @cindex Macros Automake recognizes
-@@ -1305,10 +1301,10 @@
- @end table
- 
- 
--@node Invoking aclocal, aclocal options, Optional, configure
-+@node aclocal, aclocal options, Optional, configure
+-@node Invoking aclocal
++@node aclocal
  @section Auto-generating aclocal.m4
  
--@cindex Invoking aclocal
-+@cindex aclocal
- @cindex aclocal, Invoking
- 
- Automake includes a number of Autoconf macros which can be used in your
-@@ -1344,7 +1340,7 @@
- * Macro search path::           How aclocal finds .m4 files
- @end menu
- 
--@node aclocal options, Macro search path, Invoking aclocal, configure
-+@node aclocal options, Macro search path, aclocal, configure
- @section aclocal options
- 
- @cindex aclocal, Options
+ @cindex Invoking aclocal
