@@ -5,7 +5,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4
-Release:	6
+Release:	7
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -54,13 +54,12 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %patch3 -p1
 
 %build
-./configure \
-	--prefix=%{_prefix}
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install prefix=$RPM_BUILD_ROOT%{_prefix}
+make install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man1/*} \
 	AUTHORS ChangeLog NEWS README THANKS TODO
