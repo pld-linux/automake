@@ -16,7 +16,7 @@ Patch2:		automake-1.4-19980208.patch
 Patch3:		automake-man.patch
 URL:		http://sourceware.cygnus.com/automake/
 Requires:	perl
-Prereq:		/sbin/install-info
+Prereq:		/usr/sbin/fix-info-dir
 Buildroot:	/tmp/%{name}-%{version}-root
 BuildArch:	noarch
 
@@ -65,12 +65,10 @@ gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man1/*} \
 	AUTHORS ChangeLog NEWS README THANKS TODO
 
 %post
-/sbin/install-info %{_infodir}/automake.info.gz /etc/info-dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %preun
-if [ "$1" = "0" ]; then
-	/sbin/install-info --delete %{_infodir}/automake.info.gz /etc/info-dir
-fi
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
