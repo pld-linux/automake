@@ -5,7 +5,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4
-Release:	1d
+Release:	1
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Wed Jan 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4-1d]
+  [1.4-1]
 - added Group(pl).
 
 * Tue Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
