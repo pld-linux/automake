@@ -5,12 +5,15 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4
-Release:	4
+Release:	5
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
 Source:		ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
 Patch0:		automake-info.patch
+Patch1:		automake-armnetwinder.patch
+Patch2:		automake-1.4-19980208.patch
+Patch3:		automake-man.patch
 URL:		http://sourceware.cygnus.com/automake/
 Requires:	perl
 Prereq:		/sbin/install-info
@@ -46,6 +49,9 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p0
+%patch3 -p1
 
 %build
 ./configure \
@@ -56,7 +62,7 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
 
-gzip -9nf $RPM_BUILD_ROOT/usr/info/automake* \
+gzip -9nf $RPM_BUILD_ROOT/usr/{info/*info*,man/man1/*} \
 	AUTHORS ChangeLog NEWS README THANKS TODO
 
 %post
@@ -77,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/info/automake*
 
 /usr/share/aclocal
+/usr/man/man1/*
 
 %dir /usr/share/automake
 /usr/share/automake/*.am
@@ -92,6 +99,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /usr/share/automake/missing
 
 %changelog
+* Wed Apr 28 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.4-5]
+- added patches for snapshot 19980208 and armnetwinder (from RH 6.0),
+- added patch with man pages for automake (from Debian),
+- recompiled on new rpm.
+
 * Wed Mar 10 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.4-4]
 - full %attr description for files in /usr/share.
