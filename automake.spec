@@ -4,13 +4,14 @@ Summary(fr): automake de GNU - Outils de configuration des makefiles
 Summary(pl): GNU Automake - generator plików Makefile
 Summary(tr): Makefile yapýlandýrma araçlarý
 Name:        automake
-Version:     1.3
-Release:     4
+Version:     1.3b
+Release:     1
 Copyright:   GPL
 Group:       Development/Building
-Source:      ftp://ftp.gnu.org/pub/gnu/%{name}-%{version}.tar.gz
+Source:      ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
 Requires:    perl
 Prereq:      /sbin/install-info
+URL:         http://www.cygnus.com/~tromey/automake/
 BuildArchitectures: noarch
 Buildroot:   /tmp/%{name}-%{version}-root
 
@@ -53,12 +54,12 @@ make install prefix=$RPM_BUILD_ROOT/usr
 gzip -9nf $RPM_BUILD_ROOT/usr/info/automake*
 
 %post
-/sbin/install-info /usr/info/automake.info.gz /usr/info/dir
+/sbin/install-info /usr/info/automake.info.gz /usr/info/dir --entry \
+"* automake: (automake).		                Making Makefile.in's"
 
 %preun
-if [ $1 = 0 ]; then
-	/sbin/install-info --delete /usr/info/automake.info.gz /usr/info/dir
-fi
+/sbin/install-info --delete /usr/info/automake.info.gz /usr/info/dir --entry
+"* automake: (automake).		                Making Makefile.in's"
 
 %files
 %defattr(644, root, root, 755)
@@ -71,6 +72,12 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Sat Nov 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.3b-1]
+- changed base Source url,
+- cosmetic changes in %post, %preun in {un}registering autoame info page,
+- added URL.
+
 * Sat Aug  1 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.3-5]
 - modified pl translation,
