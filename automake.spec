@@ -20,7 +20,7 @@ BuildRequires:	autoconf
 BuildRequires:	perl
 Requires:	perl
 Prereq:		/usr/sbin/fix-info-dir
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
 %description
