@@ -5,10 +5,11 @@ Summary(pl): GNU Automake - generator plików Makefile
 Summary(tr): Makefile yapýlandýrma araçlarý
 Name:        automake
 Version:     1.3d
-Release:     1
+Release:     2
 Copyright:   GPL
 Group:       Development/Building
 Source:      ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
+Patch0:      automake-shell.patch
 Requires:    perl
 Prereq:      /sbin/install-info
 URL:         http://sourceware.cygnus.com/automake/
@@ -43,6 +44,7 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 ./configure --prefix=/usr
@@ -73,6 +75,10 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Dec 23 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.3.d-2]
+- (waiting for new autoconf): fixed @SHELL@ bug.
+
 * Sat Dec 19 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.3.d-1]
 - updated URL,
