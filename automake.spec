@@ -9,8 +9,9 @@ Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.6.3
-Release:	2
+Version:	1.7
+Release:	1
+Epoch:		1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.bz2
@@ -20,12 +21,12 @@ Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
 Patch4:		%{name}-libtool.patch
 URL:		http://sourceware.cygnus.com/automake/
-BuildRequires:	autoconf >= 2.52
+BuildRequires:	autoconf >= 2.54
 BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
 Requires:	perl
 Requires:	perl(File::Glob)
-Conflicts:	autoconf < 2.52
+Conflicts:	autoconf < 2.54
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
@@ -103,6 +104,8 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 	pkgvdatadir=%{_datadir}/automake
 
 install aclocal.1 automake.1 $RPM_BUILD_ROOT%{_mandir}/man1
+
+rm -f $RPM_BUILD_ROOT/%{_infodir}/dir*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
