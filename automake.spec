@@ -23,7 +23,7 @@ URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
-Requires:	perl
+Requires:	perl-base
 Requires:	perl(File::Glob)
 Conflicts:	autoconf < 2.54
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
