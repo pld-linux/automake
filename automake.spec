@@ -56,7 +56,8 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
 
-gzip -9nf $RPM_BUILD_ROOT/usr/info/automake*
+gzip -9nf $RPM_BUILD_ROOT/usr/info/automake* \
+	AUTHORS ChangeLog NEWS README THANKS TODO
 
 %post
 /sbin/install-info /usr/info/automake.info.gz /etc/info-dir
@@ -71,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README THANKS TODO
+%doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO}.gz
 %attr(755,root,root) /usr/bin/*
 /usr/info/automake*
 
