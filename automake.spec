@@ -61,7 +61,7 @@ dosyalarýndan esinlenilmistir, ama amaç taþýnabilir olmak ve Makefile
 deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 
 %prep
-%setup -q 
+%setup -q
 %patch0 -p1
 %patch1 -p1
 
