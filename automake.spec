@@ -14,7 +14,10 @@ Patch0:		automake-info.patch
 Patch1:		automake-armnetwinder.patch
 Patch2:		automake-1.4-19980208.patch
 Patch3:		automake-man.patch
+Patch4:		automake-Makefile.patch
 URL:		http://sourceware.cygnus.com/automake/
+BuildRequires:	autoconf
+BuildRequires:	perl
 Requires:	perl
 Prereq:		/usr/sbin/fix-info-dir
 Buildroot:	/tmp/%{name}-%{version}-root
@@ -52,8 +55,10 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %patch1 -p1
 %patch2 -p0
 %patch3 -p1
+%patch4 -p1
 
 %build
+autoconf
 %configure
 make
 
