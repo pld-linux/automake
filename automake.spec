@@ -68,7 +68,7 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %patch2 -p1
 
 %build
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 
