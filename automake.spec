@@ -5,7 +5,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4b
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
@@ -87,6 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/automake/texinfo.tex
 %attr(755,root,root) %{_datadir}/automake/config.guess
 %attr(755,root,root) %{_datadir}/automake/config.sub
+%attr(755,root,root) %{_datadir}/automake/depcomp
 %attr(755,root,root) %{_datadir}/automake/install-sh
 %attr(755,root,root) %{_datadir}/automake/mdate-sh
 %attr(755,root,root) %{_datadir}/automake/elisp-comp
