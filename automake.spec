@@ -10,18 +10,17 @@ Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.8
-Release:	2
+Version:	1.8.2
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sources.redhat.com/pub/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	0a83fd4a2a32dc966b83ca3be86f884b
+# Source0-md5:	7a8138b29361baec06548e6a0ac63189
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
-Patch4:		%{name}-amd64.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	rpm-perlprov
@@ -86,11 +85,10 @@ Makefile'╕в.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 %{__autoconf}
