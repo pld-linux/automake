@@ -1,0 +1,31 @@
+--- automake-1.6.2/automake.in~	Sat Jul 27 21:48:15 2002
++++ automake-1.6.2/automake.in	Sat Jul 27 21:48:15 2002
+@@ -32,7 +32,7 @@
+ BEGIN
+ {
+   my $prefix = "@prefix@";
+-  my $perllibdir = $ENV{'perllibdir'} || "@datadir@/@PACKAGE@-@APIVERSION@";
++  my $perllibdir = $ENV{'perllibdir'} || "@datadir@/@PACKAGE@";
+   unshift @INC, "$perllibdir";
+ }
+ 
+@@ -125,7 +125,7 @@
+ my $VERSION = "@VERSION@";
+ my $PACKAGE = "@PACKAGE@";
+ my $prefix = "@prefix@";
+-my $libdir = "@datadir@/@PACKAGE@-@APIVERSION@";
++my $libdir = "@datadir@/@PACKAGE@";
+ 
+ # String constants.
+ my $IGNORE_PATTERN = '^\s*##([^#\n].*)?\n';
+--- automake-1.6.2/aclocal.in~	Sat Jul 27 21:58:48 2002
++++ automake-1.6.2/aclocal.in	Sat Jul 27 21:58:48 2002
+@@ -30,7 +30,7 @@
+ BEGIN
+ {
+   my $prefix = "@prefix@";
+-  my $perllibdir = $ENV{'perllibdir'} || "@datadir@/@PACKAGE@-@APIVERSION@";
++  my $perllibdir = $ENV{'perllibdir'} || "@datadir@/@PACKAGE@";
+   unshift @INC, "$perllibdir";
+ }
+ 
