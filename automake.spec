@@ -9,12 +9,13 @@ Summary(pt_BR):	GNU automake - ferramentas de configuração de Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.5
-Release:	7
+Release:	7.5
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
+Patch2:		%{name}-abi.patch
 URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf
 BuildRequires:	perl
@@ -64,6 +65,7 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 autoconf
