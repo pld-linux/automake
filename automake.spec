@@ -1,4 +1,4 @@
-%include	/usr/lib/rpm/macros.perl
+%include	/usr/%{_lib}/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
 Summary(es):	GNU automake - herramientas de configuración de Makefile
@@ -11,7 +11,7 @@ Summary(tr):	Makefile yapýlandýrma araçlarý
 Summary(uk):	GNU automake - ¦ÎÓÔÒÕÍÅÎÔÉ ÄÌÑ Á×ÔÏÍÁÔÉÞÎÏ§ ÇÅÎÅÒÁÃ¦§ Makefile'¦×
 Name:		automake
 Version:	1.7.9
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -21,6 +21,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
+Patch4:		%{name}-amd64.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	rpm-perlprov
@@ -88,6 +89,7 @@ Makefile'¦×.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 %{__autoconf}
