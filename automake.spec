@@ -10,13 +10,13 @@ Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.7.5b
+Version:	1.7.6
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sources.redhat.com/pub/automake/%{name}-%{version}.tar.bz2
-# Source0-md5:	b9d4f6b7edf9bb41f4ac5d4ea936c4d4
+# Source0-md5:	68c4cbf2c54aff9a26e348e43d941bd5
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
