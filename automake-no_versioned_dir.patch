@@ -1,26 +1,26 @@
---- automake-1.8/automake.in.orig	2003-12-08 18:53:57.000000000 +0100
-+++ automake-1.8/automake.in	2003-12-12 23:59:37.118849200 +0100
+--- automake-1.8.4/automake.in.orig	2004-04-10 19:15:32.000000000 +0200
++++ automake-1.8.4/automake.in	2004-04-29 02:33:26.305817840 +0200
 @@ -31,7 +31,7 @@
  
  BEGIN
  {
 -  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@-@APIVERSION@';
 +  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@';
-   unshift @INC, (split ':', $perllibdir);
+   unshift @INC, (split '@PATH_SEPARATOR@', $perllibdir);
  
    # Override SHELL.  This is required on DJGPP so that system() uses
---- automake-1.8/aclocal.in.orig	2003-12-05 22:19:39.000000000 +0100
-+++ automake-1.8/aclocal.in	2003-12-13 00:01:06.689232432 +0100
+--- automake-1.8.4/aclocal.in.orig	2004-04-10 19:15:32.000000000 +0200
++++ automake-1.8.4/aclocal.in	2004-04-29 02:33:09.191419624 +0200
 @@ -29,7 +29,7 @@
  
  BEGIN
  {
 -  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@-@APIVERSION@';
 +  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@';
-   unshift @INC, (split ':', $perllibdir);
+   unshift @INC, (split '@PATH_SEPARATOR@', $perllibdir);
  }
  
-@@ -522,7 +522,7 @@
+@@ -623,7 +623,7 @@
    # Search the versioned directory near the end, and then the
    # unversioned directory last.  Only do this if the user didn't
    # override acdir.
@@ -29,9 +29,9 @@
      if $acdir eq $default_acdir;
  
    # By default $(datadir)/aclocal doesn't exist.  We don't want to
---- automake-1.8/lib/Automake/Config.in.orig	2003-12-09 19:20:56.000000000 +0100
-+++ automake-1.8/lib/Automake/Config.in	2003-12-13 00:38:45.796795880 +0100
-@@ -31,7 +31,7 @@
+--- automake-1.8.4/lib/Automake/Config.in.orig	2003-12-25 19:00:29.000000000 +0100
++++ automake-1.8.4/lib/Automake/Config.in	2004-04-29 02:31:08.561758120 +0200
+@@ -32,7 +32,7 @@
  $APIVERSION = '@APIVERSION@';
  $PACKAGE = '@PACKAGE@';
  $VERSION = '@VERSION@';
