@@ -5,16 +5,17 @@ Summary(pl): GNU Automake - generator plików Makefile
 Summary(tr): Makefile yapýlandýrma araçlarý
 Name:        automake
 Version:     1.3d
-Release:     2
+Release:     3
 Copyright:   GPL
 Group:       Development/Building
 Source:      ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
 Patch0:      automake-shell.patch
+Patch1:      automake-info.patch
 Requires:    perl
 Prereq:      /sbin/install-info
 URL:         http://sourceware.cygnus.com/automake/
-BuildArchitectures: noarch
 Buildroot:   /tmp/%{name}-%{version}-root
+BuildArch:   noarch
 
 %description
 Automake is an experimental Makefile generator.  It was inspired by the
@@ -45,23 +46,25 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
-./configure --prefix=/usr
+./configure \
+	--prefix=/usr
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
+
 gzip -9nf $RPM_BUILD_ROOT/usr/info/automake*
 
 %post
-/sbin/install-info /usr/info/automake.info.gz /usr/info/dir --entry \
-"* automake: (automake).		                Making Makefile.in's"
+/sbin/install-info /usr/info/automake.info.gz /etc/info-dir
 
 %preun
-if [ $1 = 1 ]; then
-	/sbin/install-info --delete /usr/info/automake.info.gz /usr/info-dir
+if [ $1 = 0 ]; then
+	/sbin/install-info --delete /usr/info/automake.info.gz /etc/info-dir
 fi
 
 %files
@@ -75,12 +78,17 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Tue Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.3d-3]
+- standarized {un}registering info pages (second try .. added
+  automake-info.patch).
+
 * Wed Dec 23 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.3.d-2]
+  [1.3d-2]
 - (waiting for new autoconf): fixed @SHELL@ bug.
 
 * Sat Dec 19 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.3.d-1]
+  [1.3d-1]
 - updated URL,
 - standarized {un}registering info pages.
 
