@@ -14,8 +14,8 @@ diff -Nru automake-1.4d/automake.texi automake-1.4d.new/automake.texi
 -@dircategory Individual utilities
 -@direntry
 -* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
-+* automake: (automake).				Making Makefile.in's
-+* aclocal: (automake)aclocal.			Generating aclocal.m4
++* automake: (automake).			Making Makefile.in's
++* aclocal: (automake)aclocal.		Generating aclocal.m4
  @end direntry
  
  @ifinfo

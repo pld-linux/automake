@@ -1,3 +1,4 @@
+# _without_man - without man pages (use if you don't have automake >= 1.4b installed)
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
@@ -6,7 +7,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4d
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
@@ -51,10 +52,10 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %prep
 %setup -q
 %patch0 -p1
-#%patch1 -p1
+%{!?_without_man:%patch1 -p1}
 
 %build
-#automake
+%{!?_without_man:automake}
 %configure
 %{__make}
 
@@ -81,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/automake*
 
 %{_aclocaldir}
-#%{_mandir}/man1/*
+%{!?_without_man:%{_mandir}/man1/*}
 
 %dir %{_datadir}/automake
 %{_datadir}/automake/*.am
