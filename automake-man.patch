@@ -1,13 +1,3 @@
---- automake-1.4.orig/Makefile.am
-+++ automake-1.4/Makefile.am
-@@ -9,6 +9,7 @@
- 
- bin_SCRIPTS = automake aclocal
- info_TEXINFOS = automake.texi
-+man_MANS = automake.1 aclocal.1
- 
- amfiles = clean-hdr.am clean-kr.am clean.am comp-vars.am compile.am \
- data-clean.am data.am dejagnu.am depend.am depend2.am dist-vars.am \
 --- automake-1.4.orig/automake.1
 +++ automake-1.4/automake.1
 @@ -0,0 +1,223 @@
