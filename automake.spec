@@ -53,7 +53,7 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 #%patch1 -p1
 
 %build
-automake
+#automake
 %configure
 %{__make}
 
