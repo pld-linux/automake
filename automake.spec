@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
 Summary(fr):	automake de GNU - Outils de configuration des makefiles
@@ -5,7 +6,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4d
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
