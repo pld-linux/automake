@@ -1,4 +1,4 @@
-# _without_man - without man pages (use if you don't have automake >= 1.4b installed)
+
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
@@ -65,10 +65,10 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %prep
 %setup -q 
 #%patch0 -p1
-%{!?_without_man:%patch1 -p1}
+%patch1 -p1
 
 %build
-%{!?_without_man:rm -f missing}
+rm -f missing
 aclocal
 autoconf
 %configure
@@ -78,6 +78,9 @@ autoconf
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install aclocal.1 automake.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO
 
@@ -97,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/automake*
 
 %{_aclocaldir}
-%{!?_without_man:%{_mandir}/man1/*}
+%{_mandir}/man1/*
 
 %dir %{_datadir}/automake
 %{_datadir}/automake/am
