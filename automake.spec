@@ -14,12 +14,12 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
-Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.bz2
+Source0:	ftp://sources.redhat.com/pub/automake/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
-URL:		http://sourceware.cygnus.com/automake/
+URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
