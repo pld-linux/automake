@@ -1,0 +1,13 @@
+diff -durN -x '*~' automake-1.7.9.orig/lib/config.sub automake-1.7.9/lib/config.sub
+--- automake-1.7.9.orig/lib/config.sub	2003-10-06 23:52:42.000000000 +0200
++++ automake-1.7.9/lib/config.sub	2004-12-19 10:23:34.553654656 +0100
+@@ -792,6 +792,9 @@
+ 	pentium4-*)
+ 		basic_machine=i786-`echo $basic_machine | sed 's/^[^-]*-//'`
+ 		;;
++	amd64-*)
++		basic_machine=x86_64-`echo $basic_machine | sed 's/^[^-]*-//'`
++		;;
+ 	pn)
+ 		basic_machine=pn-gould
+ 		;;
