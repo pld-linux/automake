@@ -4,18 +4,14 @@ Summary(fr):	automake de GNU - Outils de configuration des makefiles
 Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
-Version:	1.4
-Release:	11
+Version:	1.4b
+Release:	1
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-armnetwinder.patch
-Patch2:		%{name}-1.4-19980208.patch
-Patch3:		%{name}-man.patch
-Patch4:		%{name}-Makefile.patch
 URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf
 BuildRequires:	perl
@@ -53,10 +49,6 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p0
-%patch3 -p1
-%patch4 -p1
 
 %build
 autoconf
@@ -81,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO}.gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/automake*
 
