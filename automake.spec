@@ -9,9 +9,9 @@ Summary(ru): GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk): GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.6.2
+Version:	1.6.3
 %define	_mver	%(echo %{version} | cut -d"." -f1-2)
-Release:	3
+Release:	1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.bz2
