@@ -7,7 +7,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4p5
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen

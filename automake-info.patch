@@ -13,8 +13,8 @@
 -@dircategory Individual utilities
 -@direntry
 -* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
-+* automake: (automake).				Making Makefile.in's
-+* aclocal: (automake)aclocal.			Generating aclocal.m4
++* automake: (automake).			Making Makefile.in's
++* aclocal: (automake)aclocal.		Generating aclocal.m4
  @end direntry
  
  @ifinfo
