@@ -9,8 +9,8 @@ Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.6b
-Release:	2
+Version:	1.7
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -19,9 +19,8 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
-Patch4:		%{name}-c.lo.patch
 URL:		http://sourceware.cygnus.com/automake/
-BuildRequires:	autoconf >= 2.53b
+BuildRequires:	autoconf >= 2.54
 BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
 Requires:	perl
@@ -87,7 +86,6 @@ Makefile'╕в.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 %{__autoconf}
