@@ -5,7 +5,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4
-Release:	1d
+Release:	2
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -62,19 +62,19 @@ gzip -9nf $RPM_BUILD_ROOT/usr/info/automake*
 /sbin/install-info /usr/info/automake.info.gz /etc/info-dir
 
 %preun
-if [ $1 = 0 ]; then
+if [ "$1" = "0" ]; then
 	/sbin/install-info --delete /usr/info/automake.info.gz /etc/info-dir
 fi
 
-%files
-%defattr(644, root, root, 755)
-%doc AUTHORS ChangeLog NEWS README THANKS TODO
-%attr(755, root, root) /usr/bin/*
-/usr/info/automake*
-%attr(-, root, root) /usr/share/*
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc AUTHORS ChangeLog NEWS README THANKS TODO
+%attr(755,root,root) /usr/bin/*
+/usr/info/automake*
+%attr(-, root, root) /usr/share/*
 
 %changelog
 * Wed Jan 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
