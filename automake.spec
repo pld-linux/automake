@@ -2,8 +2,10 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
+Summary(es):	GNU automake - herramientas de configuración de Makefile
 Summary(fr):	automake de GNU - Outils de configuration des makefiles
 Summary(pl):	GNU Automake - generator plików Makefile
+Summary(pt_BR):	GNU automake - ferramentas de configuração de Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4p5
@@ -35,6 +37,11 @@ die 4.4BSD-Make und Include-Dateien, der jedoch auf Portabilität und
 Konformität mit den GNU-Standards für Makefile-Variable und Targets
 abzielt.
 
+%description -l es
+Automake es un creador experimental de Makefiles. Fue inspirado en el
+4.4BSD make y incluye archivos, pero visa ser portátil y compatible
+con los padrones GNU para variables y dianas de Makefile.
+
 %description -l fr
 automake est un générateur expérimental de makefiles. Il a été inspiré
 par le make de BSD 4.4, mais se veut portable et conforme aux
@@ -45,6 +52,11 @@ Automake jest eksperymentalnym generatorem plików Makefile'a.
 Narzêdzie to jest wzorowane na make i plikach nag³ówkowych z systemu
 4.4BSD. Umo¿liwia ono generowanie plików Makefile w oderwaniu od
 platformy systemowej bêd±c jednocze¶nie zgodnym ze standardami GNU.
+
+%description -l pt_BR
+Automake é um gerador experimental de Makefiles. Ele foi inspirado
+pelo 4.4BSD make e inclui arquivos, mas visa ser portável e compatível
+com os padrões GNU para variáveis e alvos de Makefile.
 
 %description -l tr
 Automake deneysel bir Makefile üreticisidir. 4.4BSD make ve include
