@@ -22,12 +22,12 @@ Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
 URL:		http://sources.redhat.com/automake/
-BuildRequires:	autoconf >= 2.54
+BuildRequires:	autoconf >= 2.58
 BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
 Requires:	perl-base
 Requires:	perl(File::Glob)
-Conflicts:	autoconf < 2.54
+Conflicts:	autoconf < 2.58
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
