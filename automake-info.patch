@@ -1,10 +1,10 @@
---- automake-1.4-p4/automake.texi.orig	Wed Jan  6 14:01:26 1999
-+++ automake-1.4-p4/automake.texi	Wed Jul 11 02:48:08 2001
+--- automake-1.5/automake.texi.orig	Thu Aug 23 07:40:36 2001
++++ automake-1.5/automake.texi	Thu Aug 30 17:27:55 2001
 @@ -7,14 +7,10 @@
  
  @include version.texi
  
--@dircategory GNU admin
+-@dircategory GNU programming tools
 +@dircategory Programming tools:
  @direntry
 -* automake: (automake).		Making Makefile.in's
@@ -24,11 +24,11 @@
  * Examples::                    Some example packages
 -* Invoking Automake::           Creating a Makefile.in
 +* Automake::			Creating a Makefile.in
- * configure::                   Scanning configure.in
+ * configure::                   Scanning configure.ac or configure.in
  * Top level::                   The top-level Makefile.am
- * Programs::                    Building programs and libraries
-@@ -503,7 +499,7 @@
- @code{sniff_glue_SOURCES}, not @code{sniff-glue_SOURCES}.
+ * Alternative::                 An alternative approach to subdirectories
+@@ -589,7 +585,7 @@
+ @end table
  
  
 -@node Examples, Invoking Automake, Generalities, Top
@@ -36,8 +36,8 @@
  @chapter Some example packages
  
  @menu
-@@ -743,11 +739,11 @@
- @end example
+@@ -851,11 +847,11 @@
+ (The name of the object files rarely matters.)
  
  
 -@node Invoking Automake, configure, Examples, Top
@@ -50,7 +50,7 @@
  @cindex Automake, invoking
  
  To create all the @file{Makefile.in}s for a package, run the
-@@ -890,7 +886,7 @@
+@@ -996,7 +992,7 @@
  @end table
  
  
@@ -59,7 +59,7 @@
  @chapter Scanning @file{configure.in}
  
  @cindex configure.in, scanning
-@@ -909,7 +905,7 @@
+@@ -1015,7 +1011,7 @@
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -68,7 +68,7 @@
  * Macros::                      Autoconf macros supplied with Automake
  * Extending aclocal::           Writing your own aclocal macros
  @end menu
-@@ -995,7 +991,7 @@
+@@ -1069,7 +1065,7 @@
  @end table
  
  
@@ -77,7 +77,7 @@
  @section Other things Automake recognizes
  
  @cindex Macros Automake recognizes
-@@ -1185,11 +1181,11 @@
+@@ -1254,11 +1250,11 @@
  @end table
  
  
@@ -92,7 +92,7 @@
  
  Automake includes a number of Autoconf macros which can be used in your
  package; some of them are actually required by Automake in certain
-@@ -1249,7 +1245,7 @@
+@@ -1325,7 +1321,7 @@
  @end table
  
  
@@ -101,12 +101,3 @@
  @section Autoconf macros supplied with Automake
  
  @c consider generating this node automatically from m4 files.
-@@ -2294,7 +2290,7 @@
- 
- When you decide to make a distribution, the @code{dist} target will
- re-run @code{automake} with @samp{--include-deps} and other options.
--@xref{Invoking Automake}, and @ref{Options}.  This will cause the
-+@xref{Automake}, and @ref{Options}.  This will cause the
- previously generated dependencies to be inserted into the generated
- @file{Makefile.in}, and thus into the distribution.  This step also
- turns off inclusion of the dependency generation code, so that those who
