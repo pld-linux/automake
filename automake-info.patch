@@ -1,6 +1,6 @@
---- automake-1.8/doc/automake.texi.orig	2003-12-09 19:11:18.000000000 +0100
-+++ automake-1.8/doc/automake.texi	2003-12-12 23:57:21.535461008 +0100
-@@ -33,14 +33,10 @@
+--- automake-1.8.2/doc/automake.texi.orig	2004-01-07 20:30:54.000000000 +0100
++++ automake-1.8.2/doc/automake.texi	2004-01-13 20:08:36.370459336 +0100
+@@ -32,14 +32,10 @@
  @end quotation
  @end copying
  
@@ -18,7 +18,16 @@
  @end direntry
  
  @titlepage
-@@ -1095,7 +1091,7 @@
+@@ -134,7 +130,7 @@
+ 
+ * Requirements::                Configuration requirements
+ * Optional::                    Other things Automake recognizes
+-* Invoking aclocal::            Auto-generating aclocal.m4
++* aclocal::                     Auto-generating aclocal.m4
+ * aclocal options::             aclocal command line arguments
+ * Macro search path::           Modifying aclocal's search path
+ * Macros::                      Autoconf macros supplied with Automake
+@@ -1230,7 +1226,7 @@
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -27,7 +36,7 @@
  * aclocal options::             aclocal command line arguments
  * Macro search path::           Modifying aclocal's search path
  * Macros::                      Autoconf macros supplied with Automake
-@@ -1314,12 +1310,12 @@
+@@ -1449,12 +1445,12 @@
  can appear in @file{aclocal.m4} when @command{aclocal} detects that
  some required macros come from files local to your package (as
  opposed to macros installed in a system-wide directory, see
@@ -42,3 +51,19 @@
  @section Auto-generating aclocal.m4
  
  @cindex Invoking aclocal
+@@ -2028,12 +2024,12 @@
+ 
+ @code{ACLOCAL_AMFLAGS} contains options to pass to @command{aclocal}
+ when @file{aclocal.m4} is to be rebuilt by @code{make}.  This line is
+-also used by @command{autoreconf} (@pxref{autoreconf Invocation, ,
++also used by @command{autoreconf} (@pxref{autoreconf, ,
+ Using @command{autoreconf} to Update @file{configure} Scripts,
+ autoconf, The Autoconf Manual}) to run @command{aclocal} with suitable
+-options, or by @command{autopoint} (@pxref{autopoint Invocation, ,
++options, or by @command{autopoint} (@pxref{autopoint, ,
+ Invoking the @command{autopoint} Program, gettext, GNU gettext tools})
+-and @command{gettextize} (@pxref{gettextize Invocation, , Invoking the
++and @command{gettextize} (@pxref{gettextize, , Invoking the
+ @command{gettextize} Program, gettext, GNU gettext tools}) to locate
+ the place where Gettext's macros should be installed.  So even if you
+ do not really care about the rebuild rules, you should define
