@@ -62,7 +62,7 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
 
-gzip -9nf $RPM_BUILD_ROOT/usr/share/{info/*info*,man/man1/*} \
+gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*info*,%{_mandir}/man1/*} \
 	AUTHORS ChangeLog NEWS README THANKS TODO
 
 %post
@@ -99,73 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/automake/missing
 
 %changelog
-* Wed Apr 28 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4-5]
-- added patches for snapshot 19980208 and armnetwinder (from RH 6.0),
-- added patch with man pages for automake (from Debian),
-- recompiled on new rpm.
-
-* Wed Mar 10 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4-4]
-- full %attr description for files in %{_datadir}.
-
-* Wed Jan 26 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.4-1d]
-- added Group(pl).
-
-* Tue Dec 29 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.3d-3]
-- standarized {un}registering info pages (second try .. added
-  automake-info.patch).
-
-* Wed Dec 23 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.3d-2]
-- (waiting for new autoconf): fixed @SHELL@ bug.
-
-* Sat Dec 19 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.3d-1]
-- updated URL,
-- standarized {un}registering info pages.
-
-* Sat Nov 21 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.3b-1]
-- changed base Source url,
-- cosmetic changes in %post, %preun in {un}registering autoame info page,
-- added URL.
-
-* Sat Aug  1 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.3-5]
-- modified pl translation,
-- added -q %setup parameter,
-- removed INSTALL and COPING from %doc (copyright statment is in Copyright
-  field),
-- Buildroot changed to /tmp/%%{name}-%%{version}-root,
-- fixed %defattr macro,
-- added using %%{name} and %%{version} macro in Source.
-
-* Mon Jun 29 1998 Wojtek 奸usarczyk <wojtek@shadow.eu.org>
-  [1.3-4]
-- added pl translation,
-- build from non root's account,
-- added %defattr support.
-
-* Fri Apr 24 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Tue Apr 07 1998 Erik Troan <ewt@redhat.com>
-- updated to 1.3
-
-* Tue Oct 28 1997 Cristian Gafton <gafton@redhat.com>
-- added BuildRoot; added aclocal files
-
-* Fri Oct 24 1997 Erik Troan <ewt@redhat.com>
-- made it a noarch package
-
-* Thu Oct 16 1997 Michael Fulbright <msf@redhat.com>
-- Fixed some tag lines to conform to 5.0 guidelines.
-
-* Thu Jul 17 1997 Erik Troan <ewt@redhat.com>
-- updated to 1.2
-
-* Wed Mar 5 1997 msf@redhat.com <Michael Fulbright>
-- first version (1.0)
+* Thu Jun 10 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
+  [1.4-6]
+- based on RH spec,
+- spec rewrited by PLD team.
