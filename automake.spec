@@ -5,13 +5,13 @@ Summary(es):	GNU automake - herramientas de configuraciСn de Makefile
 Summary(fr):	automake de GNU - Outils de configuration des makefiles
 Summary(pl):	GNU Automake - generator plikСw Makefile
 Summary(pt_BR):	GNU automake - ferramentas de configuraГЦo de Makefile
-Summary(ru): GNU automake - инструменты для автоматической генерации Makefile'ов
+Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
-Summary(uk): GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
+Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.6.3
-%define	_mver	%(echo %{version} | cut -d"." -f1-2)
+Version:	1.6b
 Release:	1
+Epoch:		1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.bz2
@@ -20,7 +20,7 @@ Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
 URL:		http://sourceware.cygnus.com/automake/
-BuildRequires:	autoconf >= 2.52
+BuildRequires:	autoconf >= 2.53b
 BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
 Requires:	perl
@@ -64,10 +64,10 @@ pelo 4.4BSD make e inclui arquivos, mas visa ser portАvel e compatМvel
 com os padrУes GNU para variАveis e alvos de Makefile.
 
 %description -l ru
-Automake - это экспериментальный генератор Makefile'ов. Идея была навеяна
-программой make и хедерами из 4.4BSD, но automake претендует на то, чтобы
-быть портабельной и соответствовать стандартам GNU на переменные и цели
-Makefile'ов.
+Automake - это экспериментальный генератор Makefile'ов. Идея была
+навеяна программой make и хедерами из 4.4BSD, но automake претендует
+на то, чтобы быть портабельной и соответствовать стандартам GNU на
+переменные и цели Makefile'ов.
 
 %description -l tr
 Automake deneysel bir Makefile Эreticisidir. 4.4BSD make ve include
@@ -75,9 +75,10 @@ dosyalarЩndan esinlenilmistir, ama amaГ taЧЩnabilir olmak ve Makefile
 deПiЧkenleri ve hedefleri iГin GNU standartlarЩna uyum gЖstermektir.
 
 %description -l uk
-Automake - це експериментальний генератор Makefile'╕в. ╤дея була нав╕яна
-програмою make та хедерами з 4.4BSD, але automake ма╓ за ц╕ль моб╕льн╕сть
-та в╕дпов╕дн╕сть стандартам GNU на зм╕нн╕ т╕ ц╕л╕ Makefile'╕в.
+Automake - це експериментальний генератор Makefile'╕в. ╤дея була
+нав╕яна програмою make та хедерами з 4.4BSD, але automake ма╓ за ц╕ль
+моб╕льн╕сть та в╕дпов╕дн╕сть стандартам GNU на зм╕нн╕ т╕ ц╕л╕
+Makefile'╕в.
 
 %prep
 %setup -q
@@ -102,14 +103,14 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 install aclocal.1 automake.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
