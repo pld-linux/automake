@@ -1,5 +1,5 @@
---- automake-1.6b/automake.texi.orig	Sun Jul 21 10:58:30 2002
-+++ automake-1.6b/automake.texi	Sat Aug  3 19:47:02 2002
+--- automake-1.7/automake.texi.wiget	Wed Sep 25 20:58:28 2002
++++ automake-1.7/automake.texi	Thu Sep 26 12:51:56 2002
 @@ -7,14 +7,10 @@
  
  @include version.texi
@@ -18,16 +18,16 @@
  @end direntry
  
  @ifinfo
-@@ -1094,7 +1090,7 @@
+@@ -1096,7 +1092,7 @@
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
 -* Invoking aclocal::            Auto-generating aclocal.m4
 +* aclocal::                     Auto-generating aclocal.m4
+ * aclocal options::             aclocal command line arguments
+ * Macro search path::           Modifying aclocal's search path
  * Macros::                      Autoconf macros supplied with Automake
- * Extending aclocal::           Writing your own aclocal macros
- @end menu
-@@ -1134,7 +1130,7 @@
+@@ -1138,7 +1134,7 @@
  @end table
  
  
@@ -36,12 +36,12 @@
  @section Other things Automake recognizes
  
  @cindex Macros Automake recognizes
-@@ -1323,10 +1319,10 @@
+@@ -1285,10 +1281,10 @@
  @end table
  
  
--@node Invoking aclocal, Macros, Optional, configure
-+@node aclocal, Macros, Optional, configure
+-@node Invoking aclocal, aclocal options, Optional, configure
++@node aclocal, aclocal options, Optional, configure
  @section Auto-generating aclocal.m4
  
 -@cindex Invoking aclocal
@@ -49,12 +49,12 @@
  @cindex aclocal, Invoking
  
  Automake includes a number of Autoconf macros which can be used in your
-@@ -1394,7 +1390,7 @@
- @end table
+@@ -1324,7 +1320,7 @@
+ * Macro search path::           How aclocal finds .m4 files
+ @end menu
  
+-@node aclocal options, Macro search path, Invoking aclocal, configure
++@node aclocal options, Macro search path, aclocal, configure
+ @section aclocal options
  
--@node Macros, Extending aclocal, Invoking aclocal, configure
-+@node Macros, Extending aclocal, aclocal, configure
- @section Autoconf macros supplied with Automake
- 
- Automake ships with several Autoconf macros that you can use from your
+ @cindex aclocal, Options
