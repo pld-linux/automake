@@ -25,7 +25,7 @@ BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
 Requires:	perl
 Requires:	perl(File::Glob)
-Conflicts:	autoconf < 2.52
+Conflicts:	autoconf < 2.54
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
