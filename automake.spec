@@ -4,14 +4,14 @@ Summary(fr): automake de GNU - Outils de configuration des makefiles
 Summary(pl): GNU Automake - generator plików Makefile
 Summary(tr): Makefile yapýlandýrma araçlarý
 Name:        automake
-Version:     1.3b
+Version:     1.3d
 Release:     1
 Copyright:   GPL
 Group:       Development/Building
 Source:      ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
 Requires:    perl
 Prereq:      /sbin/install-info
-URL:         http://www.cygnus.com/~tromey/automake/
+URL:         http://sourceware.cygnus.com/automake/
 BuildArchitectures: noarch
 Buildroot:   /tmp/%{name}-%{version}-root
 
@@ -58,8 +58,9 @@ gzip -9nf $RPM_BUILD_ROOT/usr/info/automake*
 "* automake: (automake).		                Making Makefile.in's"
 
 %preun
-/sbin/install-info --delete /usr/info/automake.info.gz /usr/info/dir --entry \
-"* automake: (automake).		                Making Makefile.in's"
+if [ $1 = 1 ]; then
+	/sbin/install-info --delete /usr/info/automake.info.gz /usr/info-dir
+fi
 
 %files
 %defattr(644, root, root, 755)
@@ -72,6 +73,11 @@ gzip -9nf $RPM_BUILD_ROOT/usr/info/automake*
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Sat Dec 19 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.3.d-1]
+- updated URL,
+- standarized {un}registering info pages.
+
 * Sat Nov 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.3b-1]
 - changed base Source url,
