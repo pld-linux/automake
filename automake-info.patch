@@ -1,0 +1,61 @@
+diff -Nru automake-1.7.5b.orig/automake.texi automake-1.7.5b/automake.texi
+--- automake-1.7.5b.orig/automake.texi	2003-07-05 00:03:41.000000000 +0200
++++ automake-1.7.5b/automake.texi	2003-07-05 11:03:40.000000000 +0200
+@@ -7,14 +7,10 @@
+ 
+ @include version.texi
+ 
+-@dircategory Software development
++@dircategory Programming tools:
+ @direntry
+-* automake: (automake).		Making Makefile.in's.
+-@end direntry
+-
+-@dircategory Individual utilities
+-@direntry
+-* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
++* automake: (automake).			Making Makefile.in's.
++* aclocal: (automake)aclocal.		Generating aclocal.m4.
+ @end direntry
+ 
+ @ifinfo
+@@ -1107,7 +1103,7 @@
+ @menu
+ * Requirements::                Configuration requirements
+ * Optional::                    Other things Automake recognizes
+-* Invoking aclocal::            Auto-generating aclocal.m4
++* aclocal::                     Auto-generating aclocal.m4
+ * aclocal options::             aclocal command line arguments
+ * Macro search path::           Modifying aclocal's search path
+ * Macros::                      Autoconf macros supplied with Automake
+@@ -1145,7 +1141,7 @@
+ @end table
+ 
+ 
+-@node Optional, Invoking aclocal, Requirements, configure
++@node Optional, aclocal, Requirements, configure
+ @section Other things Automake recognizes
+ 
+ @cindex Macros Automake recognizes
+@@ -1305,10 +1301,10 @@
+ @end table
+ 
+ 
+-@node Invoking aclocal, aclocal options, Optional, configure
++@node aclocal, aclocal options, Optional, configure
+ @section Auto-generating aclocal.m4
+ 
+-@cindex Invoking aclocal
++@cindex aclocal
+ @cindex aclocal, Invoking
+ 
+ Automake includes a number of Autoconf macros which can be used in your
+@@ -1344,7 +1340,7 @@
+ * Macro search path::           How aclocal finds .m4 files
+ @end menu
+ 
+-@node aclocal options, Macro search path, Invoking aclocal, configure
++@node aclocal options, Macro search path, aclocal, configure
+ @section aclocal options
+ 
+ @cindex aclocal, Options
