@@ -55,12 +55,12 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 
 %build
 ./configure \
-	--prefix=/usr
+	--prefix=%{_prefix}
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install prefix=$RPM_BUILD_ROOT/usr
+make install prefix=$RPM_BUILD_ROOT%{_prefix}
 
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man1/*} \
 	AUTHORS ChangeLog NEWS README THANKS TODO
