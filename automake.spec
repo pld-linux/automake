@@ -10,13 +10,13 @@ Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.7.6
-Release:	2
+Version:	1.7.7
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sources.redhat.com/pub/automake/%{name}-%{version}.tar.bz2
-# Source0-md5:	68c4cbf2c54aff9a26e348e43d941bd5
+# Source0-md5:	4323c25644ed092c3d4fdfef434ab28d
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
@@ -28,8 +28,8 @@ Requires(pre):	fileutils
 Requires:	perl-base
 Requires:	perl(File::Glob)
 Conflicts:	autoconf < 2.54
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_aclocaldir	%{_datadir}/aclocal
 
@@ -136,6 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/automake/compile
 %attr(755,root,root) %{_datadir}/automake/config.guess
 %attr(755,root,root) %{_datadir}/automake/config.sub
+%attr(755,root,root) %{_datadir}/automake/config-ml.in
 %attr(755,root,root) %{_datadir}/automake/depcomp
 %attr(755,root,root) %{_datadir}/automake/elisp-comp
 %attr(755,root,root) %{_datadir}/automake/install-sh
@@ -143,4 +144,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/automake/missing
 %attr(755,root,root) %{_datadir}/automake/mkinstalldirs
 %attr(755,root,root) %{_datadir}/automake/py-compile
+%attr(755,root,root) %{_datadir}/automake/symlink-tree
 %attr(755,root,root) %{_datadir}/automake/ylwrap
