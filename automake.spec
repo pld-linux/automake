@@ -105,7 +105,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 install aclocal.1 automake.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
-rm -f $RPM_BUILD_ROOT/%{_infodir}/dir*
+rm -f $RPM_BUILD_ROOT%{_infodir}/dir*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
