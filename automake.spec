@@ -82,21 +82,21 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /usr/bin/*
 %{_infodir}/automake*
 
-/usr/share/aclocal
+%{_datadir}/aclocal
 %{_mandir}/man1/*
 
-%dir /usr/share/automake
-/usr/share/automake/*.am
-/usr/share/automake/texinfo.tex
-%attr(755,root,root) /usr/share/automake/config.guess
-%attr(755,root,root) /usr/share/automake/config.sub
-%attr(755,root,root) /usr/share/automake/install-sh
-%attr(755,root,root) /usr/share/automake/mdate-sh
-%attr(755,root,root) /usr/share/automake/elisp-comp
-%attr(755,root,root) /usr/share/automake/acinstall
-%attr(755,root,root) /usr/share/automake/ylwrap
-%attr(755,root,root) /usr/share/automake/mkinstalldirs
-%attr(755,root,root) /usr/share/automake/missing
+%dir %{_datadir}/automake
+%{_datadir}/automake/*.am
+%{_datadir}/automake/texinfo.tex
+%attr(755,root,root) %{_datadir}/automake/config.guess
+%attr(755,root,root) %{_datadir}/automake/config.sub
+%attr(755,root,root) %{_datadir}/automake/install-sh
+%attr(755,root,root) %{_datadir}/automake/mdate-sh
+%attr(755,root,root) %{_datadir}/automake/elisp-comp
+%attr(755,root,root) %{_datadir}/automake/acinstall
+%attr(755,root,root) %{_datadir}/automake/ylwrap
+%attr(755,root,root) %{_datadir}/automake/mkinstalldirs
+%attr(755,root,root) %{_datadir}/automake/missing
 
 %changelog
 * Wed Apr 28 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
@@ -107,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 
 * Wed Mar 10 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.4-4]
-- full %attr description for files in /usr/share.
+- full %attr description for files in %{_datadir}.
 
 * Wed Jan 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.4-1d]
