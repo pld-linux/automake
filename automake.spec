@@ -7,7 +7,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4p4
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
@@ -20,6 +20,7 @@ URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf
 BuildRequires:	perl
 Requires:	perl
+Requires:	perl-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
