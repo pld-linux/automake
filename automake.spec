@@ -58,7 +58,7 @@ gzip -9nf $RPM_BUILD_ROOT/usr/info/automake*
 "* automake: (automake).		                Making Makefile.in's"
 
 %preun
-/sbin/install-info --delete /usr/info/automake.info.gz /usr/info/dir --entry
+/sbin/install-info --delete /usr/info/automake.info.gz /usr/info/dir --entry \
 "* automake: (automake).		                Making Makefile.in's"
 
 %files
