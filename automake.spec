@@ -4,13 +4,12 @@ Summary(fr): automake de GNU - Outils de configuration des makefiles
 Summary(pl): GNU Automake - generator plików Makefile
 Summary(tr): Makefile yapýlandýrma araçlarý
 Name:        automake
-Version:     1.3d
-Release:     3
+Version:     1.4
+Release:     1
 Copyright:   GPL
 Group:       Development/Building
 Source:      ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
-Patch0:      automake-shell.patch
-Patch1:      automake-info.patch
+Patch0:      automake-info.patch
 Requires:    perl
 Prereq:      /sbin/install-info
 URL:         http://sourceware.cygnus.com/automake/
@@ -46,7 +45,6 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 ./configure \
