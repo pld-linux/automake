@@ -5,11 +5,11 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4
-Release:	8
-Copyright:	GPL
+Release:	9
+License:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
-Source:		ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
+Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
 Patch0:		automake-info.patch
 Patch1:		automake-armnetwinder.patch
 Patch2:		automake-1.4-19980208.patch
@@ -24,24 +24,25 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
 %description
-Automake is an experimental Makefile generator. Automake was inspired by the
-4.4BSD make and include files, but aims to be portable and to conform to the
-GNU standards for Makefile variables and targets.
-                                                                                                              
+Automake is an experimental Makefile generator. Automake was inspired by
+the 4.4BSD make and include files, but aims to be portable and to conform
+to the GNU standards for Makefile variables and targets.
+
 %description -l de
 Automake ist ein experimenteller Makefile-Generator, inspiriert durch die
-4.4BSD-Make und Include-Dateien, der jedoch auf Portabilität und Konformität
-mit den GNU-Standards für Makefile-Variable und Targets abzielt.
+4.4BSD-Make und Include-Dateien, der jedoch auf Portabilität und
+Konformität mit den GNU-Standards für Makefile-Variable und Targets
+abzielt.
 
 %description -l fr
 automake est un générateur expérimental de makefiles. Il a été inspiré par
-le make de BSD 4.4, mais se veut portable et conforme aux standards GNU pour
-les variables et les cibles des makefiles.
+le make de BSD 4.4, mais se veut portable et conforme aux standards GNU
+pour les variables et les cibles des makefiles.
 
 %description -l pl
 Automake jest eksperymentalnym generatorem plików Makefile'a. Narzêdzie to
-jest wzorowane na make i plikach nag³ówkowych z systemu 4.4BSD. Umo¿liwia ono
-generowanie plików Makefile w oderwaniu od platformy systemowej bêd±c
+jest wzorowane na make i plikach nag³ówkowych z systemu 4.4BSD. Umo¿liwia
+ono generowanie plików Makefile w oderwaniu od platformy systemowej bêd±c
 jednocze¶nie zgodnym ze standardami GNU.
 
 %description -l tr
@@ -84,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/automake*
 
-%{_datadir}/aclocal
+%{_aclocaldir}
 %{_mandir}/man1/*
 
 %dir %{_datadir}/automake
