@@ -15,11 +15,12 @@ Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 URL:		http://sourceware.cygnus.com/automake/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
 Requires:	perl
 Requires:	perl(File::Glob)
+Conflicts:	autoconf < 2.52
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
