@@ -1,5 +1,5 @@
---- automake-1.9.3/doc/automake.texi.orig	2004-11-01 10:50:48.000000000 +0100
-+++ automake-1.9.3/doc/automake.texi	2004-11-02 20:45:58.902160304 +0100
+--- automake-1.9.4/doc/automake.texi.orig	2004-12-18 18:52:10.000000000 +0100
++++ automake-1.9.4/doc/automake.texi	2004-12-21 08:37:57.657523648 +0100
 @@ -32,14 +32,10 @@
  @end quotation
  @end copying
@@ -18,7 +18,7 @@
  @end direntry
  
  @titlepage
-@@ -135,7 +131,7 @@
+@@ -130,7 +126,7 @@
  
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -27,7 +27,7 @@
  * aclocal options::             aclocal command line arguments
  * Macro search path::           Modifying aclocal's search path
  * Macros::                      Autoconf macros supplied with Automake
-@@ -1255,7 +1251,7 @@
+@@ -1259,7 +1255,7 @@
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -36,22 +36,23 @@
  * aclocal options::             aclocal command line arguments
  * Macro search path::           Modifying aclocal's search path
  * Macros::                      Autoconf macros supplied with Automake
-@@ -1477,12 +1473,12 @@
+@@ -1458,13 +1454,12 @@
+ @code{m4_include} is seldom used by @file{configure.ac} authors, but
  can appear in @file{aclocal.m4} when @command{aclocal} detects that
- some required macros come from files local to your package (as
- opposed to macros installed in a system-wide directory, see
--@ref{Invoking aclocal}).
-+@ref{aclocal}).
+ some required macros come from files local to your package (as opposed
+-to macros installed in a system-wide directory, @pxref{Invoking
+-aclocal}).
++to macros installed in a system-wide directory, @pxref{aclocal}).
  
- @end table
+ @end ftable
  
  
 -@node Invoking aclocal
 +@node aclocal
  @section Auto-generating aclocal.m4
  
- @cindex Invoking aclocal
-@@ -2058,12 +2054,12 @@
+ @cindex Invoking @command{aclocal}
+@@ -2064,12 +2059,12 @@
  
  @code{ACLOCAL_AMFLAGS} contains options to pass to @command{aclocal}
  when @file{aclocal.m4} is to be rebuilt by @code{make}.  This line is
