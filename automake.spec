@@ -16,6 +16,7 @@ Epoch:		1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sources.redhat.com/pub/automake/%{name}-%{version}.tar.bz2
+# Source0-md5: 21c51ad339224c5862d5abd23121c362
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
