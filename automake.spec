@@ -79,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO}.gz
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
 %{_infodir}/automake*
 
 %{_datadir}/aclocal
