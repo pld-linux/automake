@@ -5,16 +5,17 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4
-Release:	10
+Release:	11
 License:	GPL
 Group:		Development/Building
+Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
-Patch0:		automake-info.patch
-Patch1:		automake-armnetwinder.patch
-Patch2:		automake-1.4-19980208.patch
-Patch3:		automake-man.patch
-Patch4:		automake-Makefile.patch
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-armnetwinder.patch
+Patch2:		%{name}-1.4-19980208.patch
+Patch3:		%{name}-man.patch
+Patch4:		%{name}-Makefile.patch
 URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf
 BuildRequires:	perl
@@ -64,10 +65,10 @@ autoconf
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man1/*} \
-	AUTHORS ChangeLog NEWS README THANKS TODO
+gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
