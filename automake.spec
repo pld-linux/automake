@@ -14,10 +14,9 @@ License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
-Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-1.4-p5.tar.gz
+Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
-Patch2:		%{name}-libtoolize.patch
 URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf
 BuildRequires:	perl
@@ -64,10 +63,9 @@ dosyalarýndan esinlenilmistir, ama amaç taþýnabilir olmak ve Makefile
 deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 
 %prep
-%setup -q -n %{name}-1.4-p5
-%patch0 -p1
+%setup -q 
+#%patch0 -p1
 %{!?_without_man:%patch1 -p1}
-%patch2 -p1
 
 %build
 %{!?_without_man:rm -f missing}
@@ -103,16 +101,21 @@ rm -rf $RPM_BUILD_ROOT
 %{!?_without_man:%{_mandir}/man1/*}
 
 %dir %{_datadir}/automake
-%{_datadir}/automake/*.am
+%{_datadir}/automake/am
+%{_datadir}/automake/Automake
 %{_datadir}/automake/COPYING
 %{_datadir}/automake/INSTALL
 %{_datadir}/automake/texinfo.tex
+%{_datadir}/automake/ansi2knr*
 %attr(755,root,root) %{_datadir}/automake/acinstall
+%attr(755,root,root) %{_datadir}/automake/compile
 %attr(755,root,root) %{_datadir}/automake/config.guess
 %attr(755,root,root) %{_datadir}/automake/config.sub
+%attr(755,root,root) %{_datadir}/automake/depcomp
 %attr(755,root,root) %{_datadir}/automake/elisp-comp
 %attr(755,root,root) %{_datadir}/automake/install-sh
 %attr(755,root,root) %{_datadir}/automake/mdate-sh
 %attr(755,root,root) %{_datadir}/automake/ylwrap
+%attr(755,root,root) %{_datadir}/automake/py-compile
 %attr(755,root,root) %{_datadir}/automake/mkinstalldirs
 %attr(755,root,root) %{_datadir}/automake/missing
