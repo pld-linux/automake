@@ -1,24 +1,25 @@
---- automake-1.7/automake.texi.wiget	Wed Sep 25 20:58:28 2002
-+++ automake-1.7/automake.texi	Thu Sep 26 12:51:56 2002
+diff -Nru automake-1.7.5b.orig/automake.texi automake-1.7.5b/automake.texi
+--- automake-1.7.5b.orig/automake.texi	2003-07-05 00:03:41.000000000 +0200
++++ automake-1.7.5b/automake.texi	2003-07-05 11:03:40.000000000 +0200
 @@ -7,14 +7,10 @@
  
  @include version.texi
  
--@dircategory GNU programming tools
+-@dircategory Software development
 +@dircategory Programming tools:
  @direntry
--* automake: (automake).		Making Makefile.in's
+-* automake: (automake).		Making Makefile.in's.
 -@end direntry
 -
 -@dircategory Individual utilities
 -@direntry
--* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
-+* automake: (automake).			Making Makefile.in's
-+* aclocal: (automake)aclocal.		Generating aclocal.m4
+-* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
++* automake: (automake).			Making Makefile.in's.
++* aclocal: (automake)aclocal.		Generating aclocal.m4.
  @end direntry
  
  @ifinfo
-@@ -1096,7 +1092,7 @@
+@@ -1107,7 +1103,7 @@
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -27,7 +28,7 @@
  * aclocal options::             aclocal command line arguments
  * Macro search path::           Modifying aclocal's search path
  * Macros::                      Autoconf macros supplied with Automake
-@@ -1138,7 +1134,7 @@
+@@ -1145,7 +1141,7 @@
  @end table
  
  
@@ -36,7 +37,7 @@
  @section Other things Automake recognizes
  
  @cindex Macros Automake recognizes
-@@ -1285,10 +1281,10 @@
+@@ -1305,10 +1301,10 @@
  @end table
  
  
@@ -49,7 +50,7 @@
  @cindex aclocal, Invoking
  
  Automake includes a number of Autoconf macros which can be used in your
-@@ -1324,7 +1320,7 @@
+@@ -1344,7 +1340,7 @@
  * Macro search path::           How aclocal finds .m4 files
  @end menu
  
