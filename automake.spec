@@ -20,7 +20,7 @@ URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf
 BuildRequires:	perl
 Requires:	perl
-Requires:	perl-modules
+Requires:	perl(File::Glob)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
