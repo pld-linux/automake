@@ -12,6 +12,7 @@ Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-man.patch
 URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf
 BuildRequires:	perl
@@ -49,9 +50,10 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 %prep
 %setup -q
 %patch0 -p1
+#%patch1 -p1
 
 %build
-autoconf
+automake
 %configure
 %{__make}
 
@@ -78,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/automake*
 
 %{_aclocaldir}
-%{_mandir}/man1/*
+#%{_mandir}/man1/*
 
 %dir %{_datadir}/automake
 %{_datadir}/automake/*.am
