@@ -4,8 +4,8 @@ Summary(fr):	automake de GNU - Outils de configuration des makefiles
 Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
-Version:	1.4b
-Release:	2
+Version:	1.4d
+Release:	1
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
