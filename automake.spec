@@ -10,7 +10,7 @@ Summary(tr):	Makefile yapýlandýrma araçlarý
 Summary(uk):	GNU automake - ¦ÎÓÔÒÕÍÅÎÔÉ ÄÌÑ Á×ÔÏÍÁÔÉÞÎÏ§ ÇÅÎÅÒÁÃ¦§ Makefile'¦×
 Name:		automake
 Version:	1.6.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.bz2
@@ -18,6 +18,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
+Patch4:		%{name}-libtool.patch
 URL:		http://sourceware.cygnus.com/automake/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	rpm-perlprov
@@ -85,6 +86,7 @@ Makefile'¦×.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 %{__autoconf}
