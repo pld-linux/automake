@@ -5,7 +5,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4
-Release:	2
+Release:	4
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -74,9 +74,27 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
 %attr(755,root,root) /usr/bin/*
 /usr/info/automake*
-%attr(-, root, root) /usr/share/*
+
+/usr/share/aclocal
+
+%dir /usr/share/automake
+/usr/share/automake/*.am
+/usr/share/automake/texinfo.tex
+%attr(755,root,root) /usr/share/automake/config.guess
+%attr(755,root,root) /usr/share/automake/config.sub
+%attr(755,root,root) /usr/share/automake/install-sh
+%attr(755,root,root) /usr/share/automake/mdate-sh
+%attr(755,root,root) /usr/share/automake/elisp-comp
+%attr(755,root,root) /usr/share/automake/acinstall
+%attr(755,root,root) /usr/share/automake/ylwrap
+%attr(755,root,root) /usr/share/automake/mkinstalldirs
+%attr(755,root,root) /usr/share/automake/missing
 
 %changelog
+* Wed Mar 10 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.4-4]
+- full %attr description for files in /usr/share.
+
 * Wed Jan 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.4-1d]
 - added Group(pl).
