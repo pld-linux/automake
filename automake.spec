@@ -1,23 +1,24 @@
-Summary:     GNU automake - Makefile configuration tools
-Summary(de): GNU automake - Makefile-Konfigurationstools
-Summary(fr): automake de GNU - Outils de configuration des makefiles
-Summary(pl): GNU Automake - generator plików Makefile
-Summary(tr): Makefile yapýlandýrma araçlarý
-Name:        automake
-Version:     1.4
-Release:     1
-Copyright:   GPL
-Group:       Development/Building
-Source:      ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
-Patch0:      automake-info.patch
-Requires:    perl
-Prereq:      /sbin/install-info
-URL:         http://sourceware.cygnus.com/automake/
-Buildroot:   /tmp/%{name}-%{version}-root
-BuildArch:   noarch
+Summary:	GNU automake - Makefile configuration tools
+Summary(de):	GNU automake - Makefile-Konfigurationstools
+Summary(fr):	automake de GNU - Outils de configuration des makefiles
+Summary(pl):	GNU Automake - generator plików Makefile
+Summary(tr):	Makefile yapýlandýrma araçlarý
+Name:		automake
+Version:	1.4
+Release:	1d
+Copyright:	GPL
+Group:		Development/Building
+Group(pl):	Programowanie/Budowanie
+Source:		ftp://ftp.cygnus.com/pub/tromey/%{name}-%{version}.tar.gz
+Patch0:		automake-info.patch
+URL:		http://sourceware.cygnus.com/automake/
+Requires:	perl
+Prereq:		/sbin/install-info
+Buildroot:	/tmp/%{name}-%{version}-root
+BuildArch:	noarch
 
 %description
-Automake is an experimental Makefile generator.  It was inspired by the
+Automake is an experimental Makefile generator. It was inspired by the
 4.4BSD make and include files, but aims to be portable and to conform to the
 GNU standards for Makefile variables and targets.
 
@@ -76,6 +77,10 @@ fi
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Wed Jan 26 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.4-1d]
+- added Group(pl).
+
 * Tue Dec 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.3d-3]
 - standarized {un}registering info pages (second try .. added
