@@ -11,7 +11,7 @@ Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
 Version:	1.8.2
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -85,7 +85,7 @@ Makefile'╕в.
 
 %prep
 %setup -q
-#%patch0 -p1
+%patch0 -p1
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
