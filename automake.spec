@@ -9,7 +9,7 @@ Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.7.2
+Version:	1.7.2b
 Release:	1
 Epoch:		1
 License:	GPL
