@@ -12,8 +12,6 @@ Version:	1.5
 Release:	7
 License:	GPL
 Group:		Development/Building
-Group(de):	Entwicklung/Bauen
-Group(pl):	Programowanie/Budowanie
 Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
