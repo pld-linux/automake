@@ -3,6 +3,7 @@ Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
 Summary(es):	GNU automake - herramientas de configuración de Makefile
 Summary(fr):	automake de GNU - Outils de configuration des makefiles
+Summary(ko):	½º½º·Î MakefileÀ» ¸¸µé¾îÁÖ´Â GNU µµ±¸
 Summary(pl):	GNU Automake - generator plików Makefile
 Summary(pt_BR):	GNU automake - ferramentas de configuração de Makefile
 Summary(ru):	GNU automake - ÉÎÓÔÒÕÍÅÎÔÙ ÄÌÑ Á×ÔÏÍÁÔÉŞÅÓËÏÊ ÇÅÎÅÒÁÃÉÉ Makefile'Ï×
