@@ -10,25 +10,26 @@ Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.7.9
+Version:	1.8
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sources.redhat.com/pub/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5:	571fd0b0598eb2a27dcf68adcfddfacb
+# Source0-md5:	0a83fd4a2a32dc966b83ca3be86f884b
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-regex.m4.patch
 Patch3:		%{name}-no_versioned_dir.patch
 URL:		http://sources.redhat.com/automake/
-BuildRequires:	autoconf >= 2.54
+BuildRequires:	autoconf >= 2.58
 BuildRequires:	rpm-perlprov
 Requires(pre):	fileutils
 Requires:	perl-base
 Requires:	perl(File::Glob)
-Conflicts:	autoconf < 2.54
-BuildArch:	noarch
+Conflicts:	autoconf < 2.58
+Conflicts:	libtool < 2:1.5-11
+#BuildArch:	noarch -- autoconf doesn't allow
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_aclocaldir	%{_datadir}/aclocal
