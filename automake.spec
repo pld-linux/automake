@@ -6,13 +6,13 @@ Summary(fr):	automake de GNU - Outils de configuration des makefiles
 Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
-Version:	1.4p4
-Release:	4
+Version:	1.4p5
+Release:	1
 License:	GPL
 Group:		Development/Building
 Group(de):	Entwicklung/Bauen
 Group(pl):	Programowanie/Budowanie
-Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-1.4-p4.tar.gz
+Source0:	ftp://sourceware.cygnus.com/pub/automake/%{name}-1.4-p5.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-libtoolize.patch
@@ -52,7 +52,7 @@ dosyalarýndan esinlenilmistir, ama amaç taþýnabilir olmak ve Makefile
 deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 
 %prep
-%setup -q -n %{name}-1.4-p4
+%setup -q -n %{name}-1.4-p5
 %patch0 -p1
 %{!?_without_man:%patch1 -p1}
 %patch2 -p1
