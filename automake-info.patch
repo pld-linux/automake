@@ -1,0 +1,61 @@
+diff -Nru automake-1.4/automake.texi automake-1.4.new/automake.texi
+--- automake-1.4/automake.texi	Mon Jan 11 05:18:00 1999
++++ automake-1.4.new/automake.texi	Tue Jan 19 00:01:51 1999
+@@ -7,14 +7,10 @@
+ 
+ @include version.texi
+ 
+-@dircategory GNU admin
++@dircategory Programming tools:
+ @direntry
+-* automake: (automake).		Making Makefile.in's
+-@end direntry
+-
+-@dircategory Individual utilities
+-@direntry
+-* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4
++* automake: (automake)			Making Makefile.in's
++* aclocal: (automake)aclocal.		Generating aclocal.m4
+ @end direntry
+ 
+ @ifinfo
+@@ -909,7 +905,7 @@
+ @menu
+ * Requirements::                Configuration requirements
+ * Optional::                    Other things Automake recognizes
+-* Invoking aclocal::            Auto-generating aclocal.m4
++* aclocal::                     Auto-generating aclocal.m4
+ * Macros::                      Autoconf macros supplied with Automake
+ * Extending aclocal::           Writing your own aclocal macros
+ @end menu
+@@ -995,7 +991,7 @@
+ @end table
+ 
+ 
+-@node Optional, Invoking aclocal, Requirements, configure
++@node Optional, aclocal, Requirements, configure
+ @section Other things Automake recognizes
+ 
+ @cindex Macros Automake recognizes
+@@ -1185,10 +1181,10 @@
+ @end table
+ 
+ 
+-@node Invoking aclocal, Macros, Optional, configure
++@node aclocal, Macros, Optional, configure
+ @section Auto-generating aclocal.m4
+ 
+-@cindex Invoking aclocal
++@cindex aclocal
+ @cindex aclocal, Invoking
+ 
+ Automake includes a number of Autoconf macros which can be used in your
+@@ -1249,7 +1245,7 @@
+ @end table
+ 
+ 
+-@node Macros, Extending aclocal, Invoking aclocal, configure
++@node Macros, Extending aclocal, aclocal, configure
+ @section Autoconf macros supplied with Automake
+ 
+ @c consider generating this node automatically from m4 files.
