@@ -1,4 +1,4 @@
-%include	/usr/%{_lib}/rpm/macros.perl
+%include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
 Summary(es):	GNU automake - herramientas de configuración de Makefile
