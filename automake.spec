@@ -11,7 +11,7 @@ Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
 Version:	1.7.6
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Building
