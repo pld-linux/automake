@@ -64,7 +64,7 @@ deðiþkenleri ve hedefleri için GNU standartlarýna uyum göstermektir.
 
 %prep
 %setup -q 
-#%patch0 -p1
+%patch0 -p1
 %{!?_without_man:%patch1 -p1}
 
 %build
