@@ -5,7 +5,7 @@ Summary(pl):	GNU Automake - generator plików Makefile
 Summary(tr):	Makefile yapýlandýrma araçlarý
 Name:		automake
 Version:	1.4
-Release:	5
+Release:	6
 Copyright:	GPL
 Group:		Development/Building
 Group(pl):	Programowanie/Budowanie
@@ -62,7 +62,7 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
 
-gzip -9nf $RPM_BUILD_ROOT/usr/{info/*info*,man/man1/*} \
+gzip -9nf $RPM_BUILD_ROOT/usr/share/{info/*info*,man/man1/*} \
 	AUTHORS ChangeLog NEWS README THANKS TODO
 
 %post
