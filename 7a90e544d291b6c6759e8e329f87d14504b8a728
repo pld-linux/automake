@@ -1,0 +1,3 @@
+- updated to 1.8 ("what will it break today?")
+  DEVEL - really breaks too much at the moment, many aclocal/*.m4 must be fixed
+- updated info,man,no_versioned_dir patches and deps
