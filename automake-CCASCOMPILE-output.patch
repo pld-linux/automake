@@ -1,0 +1,10 @@
+--- automake-1.9.4/automake.in.orig	2004-12-28 00:41:30.657832000 +0100
++++ automake-1.9.4/automake.in	2004-12-28 00:42:23.809752432 +0100
+@@ -785,6 +785,7 @@
+ 		   'compile' => '$(CCAS) $(AM_CCASFLAGS) $(CCASFLAGS)',
+ 		   'compiler' => 'CCASCOMPILE',
+ 		   'compile_flag' => '-c',
++		   'output_flag' => '-o',
+ 		   'extensions' => ['.s', '.S'],
+ 
+ 		   # With assembly we still use the C linker.
