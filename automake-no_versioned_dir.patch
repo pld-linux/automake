@@ -29,3 +29,12 @@
    unshift @INC, "$perllibdir";
  }
  
+@@ -218,7 +218,7 @@
+     # Search the versioned directory near the end, and then the
+     # unversioned directory last.  Only do this if the user didn't
+     # override acdir.
+-    push (@dirlist, "$acdir-$APIVERSION")
++    push (@dirlist, "$acdir")
+ 	if $acdir eq $default_acdir;
+ 
+     # By default $(datadir)/aclocal doesn't exist.  We don't want to
