@@ -23,26 +23,26 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
 %description
-Automake is an experimental Makefile generator. Automake was inspired by
-the 4.4BSD make and include files, but aims to be portable and to conform
-to the GNU standards for Makefile variables and targets.
+Automake is an experimental Makefile generator. Automake was inspired
+by the 4.4BSD make and include files, but aims to be portable and to
+conform to the GNU standards for Makefile variables and targets.
 
 %description -l de
-Automake ist ein experimenteller Makefile-Generator, inspiriert durch die
-4.4BSD-Make und Include-Dateien, der jedoch auf Portabilität und
+Automake ist ein experimenteller Makefile-Generator, inspiriert durch
+die 4.4BSD-Make und Include-Dateien, der jedoch auf Portabilität und
 Konformität mit den GNU-Standards für Makefile-Variable und Targets
 abzielt.
 
 %description -l fr
-automake est un générateur expérimental de makefiles. Il a été inspiré par
-le make de BSD 4.4, mais se veut portable et conforme aux standards GNU
-pour les variables et les cibles des makefiles.
+automake est un générateur expérimental de makefiles. Il a été inspiré
+par le make de BSD 4.4, mais se veut portable et conforme aux
+standards GNU pour les variables et les cibles des makefiles.
 
 %description -l pl
-Automake jest eksperymentalnym generatorem plików Makefile'a. Narzêdzie to
-jest wzorowane na make i plikach nag³ówkowych z systemu 4.4BSD. Umo¿liwia
-ono generowanie plików Makefile w oderwaniu od platformy systemowej bêd±c
-jednocze¶nie zgodnym ze standardami GNU.
+Automake jest eksperymentalnym generatorem plików Makefile'a.
+Narzêdzie to jest wzorowane na make i plikach nag³ówkowych z systemu
+4.4BSD. Umo¿liwia ono generowanie plików Makefile w oderwaniu od
+platformy systemowej bêd±c jednocze¶nie zgodnym ze standardami GNU.
 
 %description -l tr
 Automake deneysel bir Makefile üreticisidir. 4.4BSD make ve include
