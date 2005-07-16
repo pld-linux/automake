@@ -1,5 +1,5 @@
---- automake-1.9.4/doc/automake.texi.orig	2004-12-18 18:52:10.000000000 +0100
-+++ automake-1.9.4/doc/automake.texi	2004-12-21 08:37:57.657523648 +0100
+--- automake-1.9.6/doc/automake.texi.orig	2005-07-09 11:28:44.000000000 +0200
++++ automake-1.9.6/doc/automake.texi	2005-07-16 15:22:23.458288944 +0200
 @@ -32,14 +32,10 @@
  @end quotation
  @end copying
@@ -27,7 +27,7 @@
  * aclocal options::             aclocal command line arguments
  * Macro search path::           Modifying aclocal's search path
  * Macros::                      Autoconf macros supplied with Automake
-@@ -1259,7 +1255,7 @@
+@@ -1286,7 +1282,7 @@
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -36,7 +36,7 @@
  * aclocal options::             aclocal command line arguments
  * Macro search path::           Modifying aclocal's search path
  * Macros::                      Autoconf macros supplied with Automake
-@@ -1458,13 +1454,12 @@
+@@ -1490,13 +1486,12 @@
  @code{m4_include} is seldom used by @file{configure.ac} authors, but
  can appear in @file{aclocal.m4} when @command{aclocal} detects that
  some required macros come from files local to your package (as opposed
@@ -52,10 +52,10 @@
  @section Auto-generating aclocal.m4
  
  @cindex Invoking @command{aclocal}
-@@ -2064,12 +2059,12 @@
+@@ -2120,12 +2115,12 @@
  
  @code{ACLOCAL_AMFLAGS} contains options to pass to @command{aclocal}
- when @file{aclocal.m4} is to be rebuilt by @code{make}.  This line is
+ when @file{aclocal.m4} is to be rebuilt by @command{make}.  This line is
 -also used by @command{autoreconf} (@pxref{autoreconf Invocation, ,
 +also used by @command{autoreconf} (@pxref{autoreconf, ,
  Using @command{autoreconf} to Update @file{configure} Scripts,
