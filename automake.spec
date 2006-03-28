@@ -11,7 +11,7 @@ Summary(tr):	Makefile yapýlandýrma araçlarý
 Summary(uk):	GNU automake - ¦ÎÓÔÒÕÍÅÎÔÉ ÄÌÑ Á×ÔÏÍÁÔÉÞÎÏ§ ÇÅÎÅÒÁÃ¦§ Makefile'¦×
 Name:		automake
 Version:	1.9.6
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -22,6 +22,7 @@ Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-CCASCOMPILE-output.patch
 Patch4:		%{name}-morearchs.patch
+Patch5:		%{name}-quoteld.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	rpm-perlprov
@@ -91,6 +92,7 @@ Makefile'¦×.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 %{__autoconf}
