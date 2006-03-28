@@ -1,0 +1,20 @@
+--- automake-1.9.6/automake.in	2006-03-28 16:39:11.507408000 +0300
++++ /usr/bin/automake	2006-03-28 16:38:06.897408000 +0300
+@@ -674,7 +674,7 @@
+ 		   'lder' => 'CCLD',
+ 		   'ld' => '$(CC)',
+ 		   'linker' => 'LINK',
+-		   'link' => '$(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@',
++		   'link' => '"$(CCLD)" $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@',
+ 		   'compile_flag' => '-c',
+ 		   'libtool_tag' => 'CC',
+ 		   'extensions' => ['.c'],
+@@ -685,7 +685,7 @@
+ 		   'Name' => 'C++',
+ 		   'config_vars' => ['CXX'],
+ 		   'linker' => 'CXXLINK',
+-		   'link' => '$(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@',
++		   'link' => '"$(CXXLD)" $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@',
+ 		   'autodep' => 'CXX',
+ 		   'flags' => ['CXXFLAGS', 'CPPFLAGS'],
+ 		   'compile' => '$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)',
