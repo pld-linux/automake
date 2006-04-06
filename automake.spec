@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_with	quoteld		# with quote $LD patch, fixes kde packages build with %{__cc}=ccache gcc, but breaks nagios-plugins
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
@@ -11,7 +15,7 @@ Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
 Version:	1.9.6
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -92,7 +96,7 @@ Makefile'╕в.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-%patch5 -p1
+%{?with_quoteld:%patch5 -p1}
 
 %build
 %{__autoconf}
