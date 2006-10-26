@@ -9,9 +9,9 @@
    unshift @INC, (split '@PATH_SEPARATOR@', $perllibdir);
  
    # Override SHELL.  This is required on DJGPP so that system() uses
---- automake-1.8.4/aclocal.in.orig	2004-04-10 19:15:32.000000000 +0200
-+++ automake-1.8.4/aclocal.in	2004-04-29 02:33:09.191419624 +0200
-@@ -29,7 +29,7 @@
+--- automake-1.10/aclocal.in.orig	2006-10-15 18:19:37.000000000 +0200
++++ automake-1.10/aclocal.in	2006-10-26 23:03:13.812673500 +0200
+@@ -30,7 +30,7 @@
  
  BEGIN
  {
@@ -20,23 +20,14 @@
    unshift @INC, (split '@PATH_SEPARATOR@', $perllibdir);
  }
  
-@@ -623,7 +623,7 @@
-   # Search the versioned directory near the end, and then the
-   # unversioned directory last.  Only do this if the user didn't
-   # override acdir.
--  push (@dirlist, "$acdir-$APIVERSION")
-+  push (@dirlist, "$acdir")
-     if $acdir eq $default_acdir;
- 
-   # By default $(datadir)/aclocal doesn't exist.  We don't want to
---- automake-1.8.4/lib/Automake/Config.in.orig	2003-12-25 19:00:29.000000000 +0100
-+++ automake-1.8.4/lib/Automake/Config.in	2004-04-29 02:31:08.561758120 +0200
-@@ -32,7 +32,7 @@
- $APIVERSION = '@APIVERSION@';
- $PACKAGE = '@PACKAGE@';
- $VERSION = '@VERSION@';
--$libdir = '@datadir@/@PACKAGE@-@APIVERSION@';
-+$libdir = '@datadir@/@PACKAGE@';
+--- automake-1.10/lib/Automake/Config.in.orig	2005-05-14 21:52:09.000000000 +0200
++++ automake-1.10/lib/Automake/Config.in	2006-10-26 23:07:50.717979000 +0200
+@@ -30,7 +30,7 @@
+ our $APIVERSION = '@APIVERSION@';
+ our $PACKAGE = '@PACKAGE@';
+ our $VERSION = '@VERSION@';
+-our $libdir = '@datadir@/@PACKAGE@-@APIVERSION@';
++our $libdir = '@datadir@/@PACKAGE@';
  
  1;;
  
