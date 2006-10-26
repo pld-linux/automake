@@ -14,24 +14,24 @@ Summary(ru):	GNU automake - инструменты для автоматической генерации Makefile'ов
 Summary(tr):	Makefile yapЩlandЩrma araГlarЩ
 Summary(uk):	GNU automake - ╕нструменти для автоматично╖ генерац╕╖ Makefile'╕в
 Name:		automake
-Version:	1.9.6
-Release:	3
+Version:	1.10
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://sources.redhat.com/pub/automake/%{name}-%{version}.tar.bz2
-# Source0-md5:	c11b8100bb311492d8220378fd8bf9e0
+# Source0-md5:	0e2e0f757f9e1e89b66033905860fded
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
-Patch3:		%{name}-CCASCOMPILE-output.patch
-Patch4:		%{name}-morearchs.patch
-Patch5:		%{name}-quoteld.patch
+Patch3:		%{name}-morearchs.patch
+Patch4:		%{name}-quoteld.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
+Requires:	filesystem >= 3.0-2
 Requires:	perl(File::Glob)
 Conflicts:	autoconf < 2.58
 Conflicts:	libtool < 2:1.5-11
@@ -95,8 +95,7 @@ Makefile'╕в.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
-%{?with_quoteld:%patch5 -p1}
+%{?with_quoteld:%patch4 -p1}
 
 %build
 %{__autoconf}
@@ -131,7 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/automake*
 
-%{_aclocaldir}
+%{_aclocaldir}/*.m4
 %{_mandir}/man1/*
 
 %dir %{_datadir}/automake
