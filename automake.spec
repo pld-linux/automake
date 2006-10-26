@@ -108,7 +108,6 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	m4datadir=%{_aclocaldir} \
 	pkgvdatadir=%{_datadir}/automake
 
 install aclocal.1 automake.1 $RPM_BUILD_ROOT%{_mandir}/man1
@@ -130,9 +129,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/automake*
 
-%{_aclocaldir}/*.m4
 %{_mandir}/man1/*
 
+%{_datadir}/aclocal-*
 %dir %{_datadir}/automake
 %{_datadir}/automake/am
 %{_datadir}/automake/Automake
