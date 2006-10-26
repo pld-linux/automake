@@ -27,13 +27,13 @@ Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
 Patch4:		%{name}-quoteld.patch
 URL:		http://sources.redhat.com/automake/
-BuildRequires:	autoconf >= 2.58
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
 Requires:	filesystem >= 3.0-2
 Requires:	perl(File::Glob)
-Conflicts:	autoconf < 2.58
+Conflicts:	autoconf < 2.60
 Conflicts:	libtool < 2:1.5-11
 #BuildArch:	noarch -- autoconf doesn't allow
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
