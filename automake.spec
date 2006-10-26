@@ -1,7 +1,3 @@
-#
-# Conditional build:
-%bcond_with	quoteld		# with quote $LD patch, fixes kde packages build with %{__cc}=ccache gcc, but breaks nagios-plugins
-#
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
@@ -25,7 +21,6 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
-Patch4:		%{name}-quoteld.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	rpm-perlprov
@@ -95,7 +90,6 @@ Makefile'¦×.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%{?with_quoteld:%patch4 -p1}
 
 %build
 %{__autoconf}
