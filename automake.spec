@@ -33,8 +33,6 @@ Conflicts:	libtool < 2:1.5-11
 #BuildArch:	noarch -- autoconf doesn't allow
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_aclocaldir	%{_datadir}/aclocal
-
 %description
 Automake is an experimental Makefile generator. Automake was inspired
 by the 4.4BSD make and include files, but aims to be portable and to
