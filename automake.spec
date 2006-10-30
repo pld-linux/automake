@@ -1,7 +1,3 @@
-#
-# Conditional build:
-%bcond_with	quoteld		# with quote $LD patch, fixes kde packages build with %{__cc}=ccache gcc, but breaks nagios-plugins
-#
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
@@ -15,7 +11,7 @@ Summary(tr):	Makefile yapýlandýrma araçlarý
 Summary(uk):	GNU automake - ¦ÎÓÔÒÕÍÅÎÔÉ ÄÌÑ Á×ÔÏÍÁÔÉÞÎÏ§ ÇÅÎÅÒÁÃ¦§ Makefile'¦×
 Name:		automake
 Version:	1.9.6
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -26,12 +22,12 @@ Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-CCASCOMPILE-output.patch
 Patch4:		%{name}-morearchs.patch
-Patch5:		%{name}-quoteld.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.58
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
+Requires:	filesystem >= 2.0-1
 Requires:	perl(File::Glob)
 Conflicts:	autoconf < 2.58
 Conflicts:	libtool < 2:1.5-11
@@ -96,7 +92,6 @@ Makefile'¦×.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-%{?with_quoteld:%patch5 -p1}
 
 %build
 %{__autoconf}
@@ -131,7 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_infodir}/automake*
 
-%{_aclocaldir}
+%{_aclocaldir}/*
 %{_mandir}/man1/*
 
 %dir %{_datadir}/automake
