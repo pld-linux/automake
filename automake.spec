@@ -26,7 +26,7 @@ BuildRequires:	autoconf >= 2.60
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
-Requires:	filesystem >= 3.0-2
+Requires:	filesystem >= 2.0-1
 Requires:	perl(File::Glob)
 Conflicts:	autoconf < 2.60
 Conflicts:	libtool < 2:1.5-11
