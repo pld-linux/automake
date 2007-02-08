@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	regeneration	# without full regeneration
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de):	GNU automake - Makefile-Konfigurationstools
@@ -11,7 +15,7 @@ Summary(tr):	Makefile yapýlandýrma araçlarý
 Summary(uk):	GNU automake - ¦ÎÓÔÒÕÍÅÎÔÉ ÄÌÑ Á×ÔÏÍÁÔÉÞÎÏ§ ÇÅÎÅÒÁÃ¦§ Makefile'¦×
 Name:		automake
 Version:	1.10
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Building
@@ -22,7 +26,12 @@ Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
 URL:		http://sources.redhat.com/automake/
+%if %{with regeneration}
 BuildRequires:	autoconf >= 2.60
+BuildRequires:	automake
+%else
+BuildRequires:	autoconf = 2.60
+%endif
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
@@ -90,7 +99,13 @@ Makefile'¦×.
 %patch3 -p1
 
 %build
+%if %{with regeneration}
+%{__aclocal} -I m4
+%endif
 %{__autoconf}
+%if %{with regeneration}
+%{__automake}
+%endif
 %configure
 %{__make}
 
