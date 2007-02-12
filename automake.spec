@@ -4,15 +4,15 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
-Summary(de.UTF-8):   GNU automake - Makefile-Konfigurationstools
-Summary(es.UTF-8):   GNU automake - herramientas de configuración de Makefile
-Summary(fr.UTF-8):   automake de GNU - Outils de configuration des makefiles
-Summary(ko.UTF-8):   스스로 Makefile을 만들어주는 GNU 도구
-Summary(pl.UTF-8):   GNU Automake - generator plików Makefile
-Summary(pt_BR.UTF-8):   GNU automake - ferramentas de configuração de Makefile
-Summary(ru.UTF-8):   GNU automake - инструменты для автоматической генерации Makefile'ов
-Summary(tr.UTF-8):   Makefile yapılandırma araçları
-Summary(uk.UTF-8):   GNU automake - інструменти для автоматичної генерації Makefile'ів
+Summary(de.UTF-8):	GNU automake - Makefile-Konfigurationstools
+Summary(es.UTF-8):	GNU automake - herramientas de configuración de Makefile
+Summary(fr.UTF-8):	automake de GNU - Outils de configuration des makefiles
+Summary(ko.UTF-8):	스스로 Makefile을 만들어주는 GNU 도구
+Summary(pl.UTF-8):	GNU Automake - generator plików Makefile
+Summary(pt_BR.UTF-8):	GNU automake - ferramentas de configuração de Makefile
+Summary(ru.UTF-8):	GNU automake - инструменты для автоматической генерации Makefile'ов
+Summary(tr.UTF-8):	Makefile yapılandırma araçları
+Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
 Version:	1.10
 Release:	2
