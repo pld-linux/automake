@@ -4,15 +4,15 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
-Summary(de):	GNU automake - Makefile-Konfigurationstools
-Summary(es):	GNU automake - herramientas de configuración de Makefile
-Summary(fr):	automake de GNU - Outils de configuration des makefiles
-Summary(ko):	½º½º·Î MakefileÀ» ¸¸µé¾îÁÖ´Â GNU µµ±¸
-Summary(pl):	GNU Automake - generator plików Makefile
-Summary(pt_BR):	GNU automake - ferramentas de configuração de Makefile
-Summary(ru):	GNU automake - ÉÎÓÔÒÕÍÅÎÔÙ ÄÌÑ Á×ÔÏÍÁÔÉŞÅÓËÏÊ ÇÅÎÅÒÁÃÉÉ Makefile'Ï×
-Summary(tr):	Makefile yapılandırma araçları
-Summary(uk):	GNU automake - ¦ÎÓÔÒÕÍÅÎÔÉ ÄÌÑ Á×ÔÏÍÁÔÉŞÎÏ§ ÇÅÎÅÒÁÃ¦§ Makefile'¦×
+Summary(de.UTF-8):   GNU automake - Makefile-Konfigurationstools
+Summary(es.UTF-8):   GNU automake - herramientas de configuraciÃ³n de Makefile
+Summary(fr.UTF-8):   automake de GNU - Outils de configuration des makefiles
+Summary(ko.UTF-8):   ìŠ¤ìŠ¤ë¡œ Makefileì„ ë§Œë“¤ì–´ì£¼ëŠ” GNU ë„êµ¬
+Summary(pl.UTF-8):   GNU Automake - generator plikÃ³w Makefile
+Summary(pt_BR.UTF-8):   GNU automake - ferramentas de configuraÃ§Ã£o de Makefile
+Summary(ru.UTF-8):   GNU automake - Ğ¸Ğ½ÑÑ‚Ñ€ÑƒĞ¼ĞµĞ½Ñ‚Ñ‹ Ğ´Ğ»Ñ Ğ°Ğ²Ñ‚Ğ¾Ğ¼Ğ°Ñ‚Ğ¸Ñ‡ĞµÑĞºĞ¾Ğ¹ Ğ³ĞµĞ½ĞµÑ€Ğ°Ñ†Ğ¸Ğ¸ Makefile'Ğ¾Ğ²
+Summary(tr.UTF-8):   Makefile yapÄ±landÄ±rma araÃ§larÄ±
+Summary(uk.UTF-8):   GNU automake - Ñ–Ğ½ÑÑ‚Ñ€ÑƒĞ¼ĞµĞ½Ñ‚Ğ¸ Ğ´Ğ»Ñ Ğ°Ğ²Ñ‚Ğ¾Ğ¼Ğ°Ñ‚Ğ¸Ñ‡Ğ½Ğ¾Ñ— Ğ³ĞµĞ½ĞµÑ€Ğ°Ñ†Ñ–Ñ— Makefile'Ñ–Ğ²
 Name:		automake
 Version:	1.10
 Release:	2
@@ -47,49 +47,49 @@ Automake is an experimental Makefile generator. Automake was inspired
 by the 4.4BSD make and include files, but aims to be portable and to
 conform to the GNU standards for Makefile variables and targets.
 
-%description -l de
+%description -l de.UTF-8
 Automake ist ein experimenteller Makefile-Generator, inspiriert durch
-die 4.4BSD-Make und Include-Dateien, der jedoch auf Portabilität und
-Konformität mit den GNU-Standards für Makefile-Variable und Targets
+die 4.4BSD-Make und Include-Dateien, der jedoch auf PortabilitÃ¤t und
+KonformitÃ¤t mit den GNU-Standards fÃ¼r Makefile-Variable und Targets
 abzielt.
 
-%description -l es
+%description -l es.UTF-8
 Automake es un creador experimental de Makefiles. Fue inspirado en el
-4.4BSD make y incluye archivos, pero visa ser portátil y compatible
+4.4BSD make y incluye archivos, pero visa ser portÃ¡til y compatible
 con los padrones GNU para variables y dianas de Makefile.
 
-%description -l fr
-automake est un générateur expérimental de makefiles. Il a été inspiré
+%description -l fr.UTF-8
+automake est un gÃ©nÃ©rateur expÃ©rimental de makefiles. Il a Ã©tÃ© inspirÃ©
 par le make de BSD 4.4, mais se veut portable et conforme aux
 standards GNU pour les variables et les cibles des makefiles.
 
-%description -l pl
-Automake jest eksperymentalnym generatorem plików Makefile'a.
-Narzêdzie to jest wzorowane na make i plikach nag³ówkowych z systemu
-4.4BSD. Umo¿liwia ono generowanie plików Makefile w oderwaniu od
-platformy systemowej bêd±c jednocze¶nie zgodnym ze standardami GNU.
+%description -l pl.UTF-8
+Automake jest eksperymentalnym generatorem plikÃ³w Makefile'a.
+NarzÄ™dzie to jest wzorowane na make i plikach nagÅ‚Ã³wkowych z systemu
+4.4BSD. UmoÅ¼liwia ono generowanie plikÃ³w Makefile w oderwaniu od
+platformy systemowej bÄ™dÄ…c jednoczeÅ›nie zgodnym ze standardami GNU.
 
-%description -l pt_BR
-Automake é um gerador experimental de Makefiles. Ele foi inspirado
-pelo 4.4BSD make e inclui arquivos, mas visa ser portável e compatível
-com os padrões GNU para variáveis e alvos de Makefile.
+%description -l pt_BR.UTF-8
+Automake Ã© um gerador experimental de Makefiles. Ele foi inspirado
+pelo 4.4BSD make e inclui arquivos, mas visa ser portÃ¡vel e compatÃ­vel
+com os padrÃµes GNU para variÃ¡veis e alvos de Makefile.
 
-%description -l ru
-Automake - ÜÔÏ ÜËÓĞÅÒÉÍÅÎÔÁÌØÎÙÊ ÇÅÎÅÒÁÔÏÒ Makefile'Ï×. éÄÅÑ ÂÙÌÁ
-ÎÁ×ÅÑÎÁ ĞÒÏÇÒÁÍÍÏÊ make É ÈÅÄÅÒÁÍÉ ÉÚ 4.4BSD, ÎÏ automake ĞÒÅÔÅÎÄÕÅÔ
-ÎÁ ÔÏ, ŞÔÏÂÙ ÂÙÔØ ĞÏÒÔÁÂÅÌØÎÏÊ É ÓÏÏÔ×ÅÔÓÔ×Ï×ÁÔØ ÓÔÁÎÄÁÒÔÁÍ GNU ÎÁ
-ĞÅÒÅÍÅÎÎÙÅ É ÃÅÌÉ Makefile'Ï×.
+%description -l ru.UTF-8
+Automake - ÑÑ‚Ğ¾ ÑĞºÑĞ¿ĞµÑ€Ğ¸Ğ¼ĞµĞ½Ñ‚Ğ°Ğ»ÑŒĞ½Ñ‹Ğ¹ Ğ³ĞµĞ½ĞµÑ€Ğ°Ñ‚Ğ¾Ñ€ Makefile'Ğ¾Ğ². Ğ˜Ğ´ĞµÑ Ğ±Ñ‹Ğ»Ğ°
+Ğ½Ğ°Ğ²ĞµÑĞ½Ğ° Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¼Ğ¾Ğ¹ make Ğ¸ Ñ…ĞµĞ´ĞµÑ€Ğ°Ğ¼Ğ¸ Ğ¸Ğ· 4.4BSD, Ğ½Ğ¾ automake Ğ¿Ñ€ĞµÑ‚ĞµĞ½Ğ´ÑƒĞµÑ‚
+Ğ½Ğ° Ñ‚Ğ¾, Ñ‡Ñ‚Ğ¾Ğ±Ñ‹ Ğ±Ñ‹Ñ‚ÑŒ Ğ¿Ğ¾Ñ€Ñ‚Ğ°Ğ±ĞµĞ»ÑŒĞ½Ğ¾Ğ¹ Ğ¸ ÑĞ¾Ğ¾Ñ‚Ğ²ĞµÑ‚ÑÑ‚Ğ²Ğ¾Ğ²Ğ°Ñ‚ÑŒ ÑÑ‚Ğ°Ğ½Ğ´Ğ°Ñ€Ñ‚Ğ°Ğ¼ GNU Ğ½Ğ°
+Ğ¿ĞµÑ€ĞµĞ¼ĞµĞ½Ğ½Ñ‹Ğµ Ğ¸ Ñ†ĞµĞ»Ğ¸ Makefile'Ğ¾Ğ².
 
-%description -l tr
-Automake deneysel bir Makefile üreticisidir. 4.4BSD make ve include
-dosyalarından esinlenilmistir, ama amaç taşınabilir olmak ve Makefile
-değişkenleri ve hedefleri için GNU standartlarına uyum göstermektir.
+%description -l tr.UTF-8
+Automake deneysel bir Makefile Ã¼reticisidir. 4.4BSD make ve include
+dosyalarÄ±ndan esinlenilmistir, ama amaÃ§ taÅŸÄ±nabilir olmak ve Makefile
+deÄŸiÅŸkenleri ve hedefleri iÃ§in GNU standartlarÄ±na uyum gÃ¶stermektir.
 
-%description -l uk
-Automake - ÃÅ ÅËÓĞÅÒÉÍÅÎÔÁÌØÎÉÊ ÇÅÎÅÒÁÔÏÒ Makefile'¦×. ¶ÄÅÑ ÂÕÌÁ
-ÎÁ×¦ÑÎÁ ĞÒÏÇÒÁÍÏÀ make ÔÁ ÈÅÄÅÒÁÍÉ Ú 4.4BSD, ÁÌÅ automake ÍÁ¤ ÚÁ Ã¦ÌØ
-ÍÏÂ¦ÌØÎ¦ÓÔØ ÔÁ ×¦ÄĞÏ×¦ÄÎ¦ÓÔØ ÓÔÁÎÄÁÒÔÁÍ GNU ÎÁ ÚÍ¦ÎÎ¦ Ô¦ Ã¦Ì¦
-Makefile'¦×.
+%description -l uk.UTF-8
+Automake - Ñ†Ğµ ĞµĞºÑĞ¿ĞµÑ€Ğ¸Ğ¼ĞµĞ½Ñ‚Ğ°Ğ»ÑŒĞ½Ğ¸Ğ¹ Ğ³ĞµĞ½ĞµÑ€Ğ°Ñ‚Ğ¾Ñ€ Makefile'Ñ–Ğ². Ğ†Ğ´ĞµÑ Ğ±ÑƒĞ»Ğ°
+Ğ½Ğ°Ğ²Ñ–ÑĞ½Ğ° Ğ¿Ñ€Ğ¾Ğ³Ñ€Ğ°Ğ¼Ğ¾Ñ make Ñ‚Ğ° Ñ…ĞµĞ´ĞµÑ€Ğ°Ğ¼Ğ¸ Ğ· 4.4BSD, Ğ°Ğ»Ğµ automake Ğ¼Ğ°Ñ” Ğ·Ğ° Ñ†Ñ–Ğ»ÑŒ
+Ğ¼Ğ¾Ğ±Ñ–Ğ»ÑŒĞ½Ñ–ÑÑ‚ÑŒ Ñ‚Ğ° Ğ²Ñ–Ğ´Ğ¿Ğ¾Ğ²Ñ–Ğ´Ğ½Ñ–ÑÑ‚ÑŒ ÑÑ‚Ğ°Ğ½Ğ´Ğ°Ñ€Ñ‚Ğ°Ğ¼ GNU Ğ½Ğ° Ğ·Ğ¼Ñ–Ğ½Ğ½Ñ– Ñ‚Ñ– Ñ†Ñ–Ğ»Ñ–
+Makefile'Ñ–Ğ².
 
 %prep
 %setup -q
