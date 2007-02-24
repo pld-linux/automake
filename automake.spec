@@ -15,7 +15,7 @@ Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
 Version:	1.10
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Building
