@@ -14,13 +14,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.10
-Release:	3
+Version:	1.10.1
+Release:	1
 Epoch:		1
-License:	GPL
+License:	GPL v2+
 Group:		Development/Building
-Source0:	ftp://sources.redhat.com/pub/automake/%{name}-%{version}.tar.bz2
-# Source0-md5:	0e2e0f757f9e1e89b66033905860fded
+Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.bz2
+# Source0-md5:	4510391e6b3edaa4cffb3ced87c9560c
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
@@ -28,7 +28,7 @@ Patch3:		%{name}-morearchs.patch
 URL:		http://sources.redhat.com/automake/
 %if %{with regeneration}
 BuildRequires:	autoconf >= 2.60
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.8a
 %else
 BuildRequires:	autoconf = 2.60
 %endif
@@ -98,9 +98,16 @@ Makefile'ів.
 %patch2 -p1
 %patch3 -p1
 
+%if %{with regeneration}
+# prepare temporary copy of m4 dir without amversion.m4 (which causes automake version check)
+mkdir m4-tmp
+cd m4-tmp
+ln -s ../m4/[!a]*.m4 ../m4/a[!m]*.m4 .
+%endif
+
 %build
 %if %{with regeneration}
-%{__aclocal} -I m4
+%{__aclocal} -I m4-tmp
 %endif
 %{__autoconf}
 %if %{with regeneration}
@@ -133,10 +140,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO
-%attr(755,root,root) %{_bindir}/*
-%{_infodir}/automake*
-
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/aclocal*
+%attr(755,root,root) %{_bindir}/automake*
+%{_infodir}/automake.info*
+%{_mandir}/man1/aclocal.1*
+%{_mandir}/man1/automake.1*
 
 %{_datadir}/aclocal-*
 %dir %{_datadir}/automake
