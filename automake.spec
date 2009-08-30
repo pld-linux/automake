@@ -28,9 +28,9 @@ Patch3:		%{name}-morearchs.patch
 URL:		http://sources.redhat.com/automake/
 %if %{with regeneration}
 BuildRequires:	autoconf >= 2.60
-BuildRequires:	automake >= 1:1.8a
+BuildRequires:	automake >= 1:1.10a
 %else
-BuildRequires:	autoconf = 2.63
+BuildRequires:	autoconf >= 2.63
 %endif
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.7
@@ -144,7 +144,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/automake*
 %{_infodir}/automake.info*
 %{_mandir}/man1/aclocal.1*
+%{_mandir}/man1/aclocal-1.11.1*
 %{_mandir}/man1/automake.1*
+%{_mandir}/man1/automake-1.11.1*
 
 %{_datadir}/aclocal-*
 %dir %{_datadir}/automake
