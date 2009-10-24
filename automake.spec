@@ -37,6 +37,7 @@ BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
 Requires:	filesystem >= 3.0-2
 Requires:	perl(File::Glob)
+Requires:	perl(threads)
 Conflicts:	autoconf < 2.60
 Conflicts:	libtool < 2:1.5-11
 #BuildArch:	noarch -- autoconf doesn't allow
