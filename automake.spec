@@ -37,8 +37,11 @@ BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
 Requires:	filesystem >= 3.0-2
 Requires:	perl(File::Glob)
+%if %(%{__perl} -le 'use threads; print 1' || echo 0)
+# required only if perl was built with threads
 Requires:	perl(Thread::Queue)
 Requires:	perl(threads)
+%endif
 Conflicts:	autoconf < 2.60
 Conflicts:	libtool < 2:1.5-11
 #BuildArch:	noarch -- autoconf doesn't allow
