@@ -32,6 +32,7 @@ BuildRequires:	automake >= 1:1.10a
 %else
 BuildRequires:	autoconf >= 2.63
 %endif
+BuildRequires:	help2man
 BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo >= 4.7
 Requires(pre):	fileutils
