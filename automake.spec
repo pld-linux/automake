@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	regeneration	# without full regeneration
+%bcond_with		bootstrap	# without full regeneration
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
@@ -26,7 +26,7 @@ Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
 URL:		http://sources.redhat.com/automake/
-%if %{with regeneration}
+%if %{without bootstrap}
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake >= 1:1.10a
 %else
@@ -104,7 +104,7 @@ Makefile'ів.
 %patch2 -p1
 %patch3 -p1
 
-%if %{with regeneration}
+%if %{without bootstrap}
 # prepare temporary copy of m4 dir without amversion.m4 (which causes automake version check)
 mkdir m4-tmp
 cd m4-tmp
@@ -112,11 +112,11 @@ ln -s ../m4/[!a]*.m4 ../m4/a[!m]*.m4 .
 %endif
 
 %build
-%if %{with regeneration}
+%if %{without bootstrap}
 %{__aclocal} -I m4-tmp
 %endif
 %{__autoconf}
-%if %{with regeneration}
+%if %{without bootstrap}
 %{__automake}
 %endif
 %configure
