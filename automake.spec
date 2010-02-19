@@ -15,7 +15,7 @@ Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
 Version:	1.11.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
@@ -45,7 +45,7 @@ Requires:	perl(threads)
 %endif
 Conflicts:	autoconf < 2.60
 Conflicts:	libtool < 2:1.5-11
-#BuildArch:	noarch -- autoconf doesn't allow
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_enable_debug_packages	0
@@ -121,7 +121,12 @@ ln -s ../m4/[!a]*.m4 ../m4/a[!m]*.m4 .
 %if %{without bootstrap}
 %{__automake}
 %endif
-%configure
+
+# NOTE: _target macro becames "noarch" if ./builder passes --target=noarch, so
+# use plain /usr/bin/rpmbuild.
+%configure \
+	--host=%{_target} \
+	--build=%{_target}
 %{__make}
 
 %install
