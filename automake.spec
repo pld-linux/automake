@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with		bootstrap	# without full regeneration
-#
+
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de.UTF-8):	GNU automake - Makefile-Konfigurationstools
@@ -47,6 +47,8 @@ Conflicts:	autoconf < 2.60
 Conflicts:	libtool < 2:1.5-11
 #BuildArch:	noarch -- autoconf doesn't allow
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_enable_debug_packages	0
 
 %description
 Automake is an experimental Makefile generator. Automake was inspired
