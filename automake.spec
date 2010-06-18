@@ -123,10 +123,10 @@ ln -s ../m4/[!a]*.m4 ../m4/a[!m]*.m4 .
 %endif
 
 # NOTE: _target macro becames "noarch" if ./builder passes --target=noarch, so
-# use plain /usr/bin/rpmbuild.
+# be sure use plain /usr/bin/rpmbuild.
 %configure \
-	--host=%{_target} \
-	--build=%{_target}
+	--host=%{_host} \
+	--build=%{_host}
 %{__make}
 
 %install
@@ -137,7 +137,7 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgvdatadir=%{_datadir}/automake
 
-install aclocal.1 automake.1 $RPM_BUILD_ROOT%{_mandir}/man1
+cp -a aclocal.1 automake.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 rm -f $RPM_BUILD_ROOT%{_infodir}/dir*
 
