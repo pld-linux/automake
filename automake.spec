@@ -26,11 +26,11 @@ Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
 URL:		http://sources.redhat.com/automake/
-%if %{without bootstrap}
-BuildRequires:	autoconf >= 2.60
-BuildRequires:	automake >= 1:1.10a
-%else
+%if %{with bootstrap}
 BuildRequires:	autoconf >= 2.63
+%else
+BuildRequires:	autoconf >= 2.62
+BuildRequires:	automake >= 1:1.10a
 %endif
 BuildRequires:	help2man
 BuildRequires:	rpm-perlprov
