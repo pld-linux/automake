@@ -14,13 +14,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.11.1
-Release:	3
+Version:	1.11.2
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.bz2
-# Source0-md5:	c2972c4d9b3e29c03d5f2af86249876f
+# Source0-md5:	18194e804d415767bae8f703c963d456
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
@@ -169,6 +169,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/automake/INSTALL
 %{_datadir}/automake/texinfo.tex
 %{_datadir}/automake/ansi2knr*
+%attr(755,root,root) %{_datadir}/automake/ar-lib
 %attr(755,root,root) %{_datadir}/automake/acinstall
 %attr(755,root,root) %{_datadir}/automake/compile
 %attr(755,root,root) %{_datadir}/automake/config.guess
