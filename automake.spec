@@ -14,28 +14,30 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.11.2
-Release:	2
+Version:	1.11.3
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
-Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.bz2
-# Source0-md5:	18194e804d415767bae8f703c963d456
+Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
+# Source0-md5:	3d72b2076eb4397ad5e9a2aace6357fd
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
-Patch4:		%{name}-git.patch
+#Patch4:		%{name}-git.patch
 URL:		http://sources.redhat.com/automake/
 %if %{with bootstrap}
-BuildRequires:	autoconf >= 2.63
-%else
 BuildRequires:	autoconf >= 2.62
+%else
+BuildRequires:	autoconf >= 2.68
 BuildRequires:	automake >= 1:1.10a
 %endif
 BuildRequires:	help2man
 BuildRequires:	rpm-perlprov
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.7
+BuildRequires:	xz
 Requires(pre):	fileutils
 Requires:	filesystem >= 3.0-2
 Requires:	perl(File::Glob)
@@ -106,7 +108,6 @@ Makefile'ів.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %if %{without bootstrap}
 # prepare temporary copy of m4 dir without amversion.m4 (which causes automake version check)

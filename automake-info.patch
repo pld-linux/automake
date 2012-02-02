@@ -1,9 +1,9 @@
---- automake-1.11.2/doc/automake.texi.orig	2011-12-21 20:53:41.000000000 +0100
-+++ automake-1.11.2/doc/automake.texi	2011-12-26 07:06:15.124722539 +0100
-@@ -41,15 +41,11 @@
- @c info Automake  points to the Automake package's documentation
- @c info automake  points to the automake script's documentation
- @c (Autoconf has a similar setup.)
+--- automake-1.11.3/doc/automake.texi.orig	2012-02-01 11:40:23.000000000 +0100
++++ automake-1.11.3/doc/automake.texi	2012-02-02 17:12:44.575874589 +0100
+@@ -38,15 +38,11 @@
+ @end quotation
+ @end copying
+ 
 -@dircategory Software development
 +@dircategory Programming tools:
  @direntry
@@ -12,76 +12,83 @@
 -
 -@dircategory Individual utilities
 -@direntry
--* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
--* automake: (automake)Invoking Automake.        Generating Makefile.in.
-+* automake: (automake).			Making GNU standards-compliant Makefiles
-+* aclocal: (automake)aclocal.		Generating aclocal.m4
-+* automake: (automake)automake.		Generating Makefile.in
+-* aclocal-invocation: (automake)aclocal Invocation.   Generating aclocal.m4.
+-* automake-invocation: (automake)automake Invocation. Generating Makefile.in.
++* Automake: (automake).			Making GNU standards-compliant Makefiles
++* aclocal-invocation: (automake)aclocal.	Generating aclocal.m4
++* automake-invocation: (automake)automake.	Generating Makefile.in
  @end direntry
  
  @titlepage
-@@ -102,7 +98,7 @@
+@@ -99,7 +95,7 @@
  * Autotools Introduction::      An Introduction to the Autotools
  * Generalities::                General ideas
  * Examples::                    Some example packages
--* Invoking Automake::           Creating a Makefile.in
+-* automake Invocation::         Creating a Makefile.in
 +* automake::                    Creating a Makefile.in
  * configure::                   Scanning configure.ac, using aclocal
  * Directories::                 Declaring subdirectories
  * Programs::                    Building programs and libraries
-@@ -181,7 +177,7 @@
+@@ -178,7 +174,7 @@
  
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
--* Invoking aclocal::            Auto-generating aclocal.m4
+-* aclocal Invocation::          Auto-generating aclocal.m4
 +* aclocal::                     Auto-generating aclocal.m4
  * Macros::                      Autoconf macros supplied with Automake
  
  Auto-generating aclocal.m4
-@@ -2504,7 +2500,7 @@
+@@ -1673,7 +1669,7 @@
+ When starting a new project, we suggest you start with such a simple
+ @file{configure.ac}, and gradually add the other tests it requires.
+ The command @command{autoscan} can also suggest a few of the tests
+-your package may need (@pxref{autoscan Invocation, , Using
++your package may need (@pxref{autoscan, , Using
+ @command{autoscan} to Create @file{configure.ac}, autoconf, The
+ Autoconf Manual}).
+ 
+@@ -2506,7 +2502,7 @@
+ would be chosen by automake; they would be @file{false-true.o} and
  @file{true-true.o}. (The name of the object files rarely matters.)
  
- 
--@node Invoking Automake
+-@node automake Invocation
 +@node automake
  @chapter Creating a @file{Makefile.in}
- 
- @cindex Multiple @file{configure.ac} files
-@@ -2749,7 +2745,7 @@
+ @c This node used to be named "Invoking automake".  This @anchor
+ @c allows old links to still work.
+@@ -2756,7 +2752,7 @@
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
--* Invoking aclocal::            Auto-generating aclocal.m4
+-* aclocal Invocation::          Auto-generating aclocal.m4
 +* aclocal::                     Auto-generating aclocal.m4
  * Macros::                      Autoconf macros supplied with Automake
  @end menu
  
-@@ -3120,13 +3116,12 @@
+@@ -3127,11 +3123,11 @@
  @code{m4_include} is seldom used by @file{configure.ac} authors, but
  can appear in @file{aclocal.m4} when @command{aclocal} detects that
- some required macros come from files local to your package (as opposed
--to macros installed in a system-wide directory, @pxref{Invoking
--aclocal}).
-+to macros installed in a system-wide directory, @pxref{aclocal}).
+ some required macros come from files local to your package (as opposed to
+-macros installed in a system-wide directory, @pxref{aclocal Invocation}).
++macros installed in a system-wide directory, @pxref{aclocal}).
  
  @end ftable
  
- 
--@node Invoking aclocal
+-@node aclocal Invocation
 +@node aclocal
  @section Auto-generating aclocal.m4
- 
- @cindex Invoking @command{aclocal}
-@@ -3309,7 +3304,7 @@
+ @c This node used to be named "Invoking automake".  This @anchor
+ @c allows old links to still work.
+@@ -3321,7 +3317,7 @@
  
  @vindex WARNINGS
  The environment variable @env{WARNINGS} is honored in the same
--way as it is for @command{automake} (@pxref{Invoking Automake}).
+-way as it is for @command{automake} (@pxref{automake Invocation}).
 +way as it is for @command{automake} (@pxref{automake}).
  
  @end table
  
-@@ -3617,12 +3612,12 @@
+@@ -3629,12 +3625,12 @@
  
  @code{ACLOCAL_AMFLAGS} contains options to pass to @command{aclocal}
  when @file{aclocal.m4} is to be rebuilt by @command{make}.  This line is
@@ -97,7 +104,16 @@
  @command{gettextize} Program, gettext, GNU gettext tools}) to locate
  the place where Gettext's macros should be installed.  So even if you
  do not really care about the rebuild rules, you should define
-@@ -5481,7 +5476,7 @@
+@@ -4092,7 +4088,7 @@
+ Although using some of the following macros was required in past
+ releases, you should not use any of them in new code.  Running
+ @command{autoupdate} should adjust your @file{configure.ac}
+-automatically (@pxref{autoupdate Invocation, , Using
++automatically (@pxref{autoupdate, , Using
+ @command{autoupdate} to Modernize @file{configure.ac}, autoconf, The
+ Autoconf Manual}).
+ 
+@@ -5506,7 +5502,7 @@
  passed to the tool invoked by @command{libtool} (hence the use of
  @samp{@var{library}_LDFLAGS} for libtool linking flags).  Generic
  options include @option{--tag=@var{tag}} and @option{--silent}
@@ -106,38 +122,47 @@
  Libtool Manual} for more options) should appear before the mode
  selection on the command line; in @file{Makefile.am}s they should
  be listed in the @samp{@var{library}_LIBTOOLFLAGS} variable.
-@@ -9551,7 +9546,7 @@
+@@ -5580,7 +5576,7 @@
+ Since Automake 1.6, it has been decided that running
+ @command{libtoolize} was none of Automake's business.  Instead, that
+ functionality has been moved into the @command{autoreconf} command
+-(@pxref{autoreconf Invocation, , Using @command{autoreconf}, autoconf,
++(@pxref{autoreconf, , Using @command{autoreconf}, autoconf,
+ The Autoconf Manual}).  If you do not want to remember what to run and
+ when, just learn the @command{autoreconf} command.  Hopefully,
+ replacing existing @file{bootstrap.sh} or @file{autogen.sh} scripts by
+@@ -9589,7 +9585,7 @@
  @cindex Option, @option{-W@var{category}}
  @cindex Option, @option{--warnings=@var{category}}
  These options behave exactly like their command-line counterpart
--(@pxref{Invoking Automake}).  This allows you to enable or disable some
+-(@pxref{automake Invocation}).  This allows you to enable or disable some
 +(@pxref{automake}).  This allows you to enable or disable some
  warning categories on a per-file basis.  You can also setup some warnings
  for your entire project; for instance, try @samp{AM_INIT_AUTOMAKE([-Wall])}
  in your @file{configure.ac}.
-@@ -10166,7 +10161,7 @@
- @command{make} implementations that do not support it.  The
- @option{silent-rules} option turns off warnings about recursive variable
- expansion, which are in turn enabled by @option{-Wportability}
--(@pxref{Invoking Automake}).
-+(@pxref{automake}).
- 
- @vindex @code{AM_V_GEN}
- @vindex @code{AM_V_at}
-@@ -10386,7 +10381,7 @@
+@@ -10204,7 +10200,7 @@
+ that is not required by POSIX 2008 but is widely supported in
+ practice.  The @option{silent-rules} option thus turns off warnings
+ about recursive variable expansion, which are in turn enabled by
+-@option{-Wportability} (@pxref{automake Invocation}).  On the rare
++@option{-Wportability} (@pxref{automake}).  On the rare
+ @command{make} implementations that do not support nested variable
+ expansion, whether rules are silent is always determined at configure
+ time, and cannot be overridden at make time.  Future versions of POSIX
+@@ -10431,7 +10427,7 @@
  settings of Automake, or replace some of its rules.  Overriding
  Automake rules is often inadvisable, particularly in the topmost
  directory of a package with subdirectories.  The @option{-Woverride}
--option (@pxref{Invoking Automake}) comes in handy to catch overridden
+-option (@pxref{automake Invocation}) comes in handy to catch overridden
 +option (@pxref{automake}) comes in handy to catch overridden
  definitions.
  
  Note that Automake does not make any distinction between rules with
-@@ -10834,7 +10829,7 @@
+@@ -10879,7 +10875,7 @@
  @end example
  
  The use of @option{--force-missing} ensures that auxiliary tools will be
--overridden by new versions (@pxref{Invoking Automake}).
+-overridden by new versions (@pxref{automake Invocation}).
 +overridden by new versions (@pxref{automake}).
  
  It is important to regenerate all these files each time Automake is
