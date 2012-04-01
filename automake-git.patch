@@ -1,0 +1,39 @@
+commit 819005ae2c86c3ef4b77bea7176bb6d8b67ebd64
+Author: Steven Drake <sbd@NetBSD.org>
+Date:   Thu Mar 15 09:12:00 2012 +0100
+
+    python: avoid failures due to $(am__py_compile) being undefined
+    
+    Fixes automake bug#10995, introduced in commit v1.11-372-gb46debf.
+    
+    * lib/am/python.am: Move the definition of 'am__py_compile' to
+    ensure it is always emitted in the output Makefile.in.  Previously,
+    this wouldn't have happened if the input Makefile.am contained a
+    'noinst_PYTHON' declaration before a 'python_PYTHON' one.
+    * tests/Makefile.am (XFAIL_TESTS): Remove 'python-pr10995.test' and
+    'python.test'.
+    * NEWS: Update.
+    
+    Copyright-paperwork-exempt: yes
+    Signed-off-by: Stefano Lattarini <stefano.lattarini@gmail.com>
+
+diff --git a/lib/am/python.am b/lib/am/python.am
+index 427c95d..bb2748c 100644
+--- a/lib/am/python.am
++++ b/lib/am/python.am
+@@ -19,12 +18,13 @@ if %?INSTALL%
+ include inst-vars.am
+ endif %?INSTALL%
+ 
++?FIRST?am__py_compile = PYTHON=$(PYTHON) $(SHELL) $(py_compile)
++
+ ## ------------ ##
+ ## Installing.  ##
+ ## ------------ ##
+ 
+ if %?INSTALL%
+-?FIRST?am__py_compile = PYTHON=$(PYTHON) $(SHELL) $(py_compile)
+ am__installdirs += "$(DESTDIR)$(%NDIR%dir)"
+ .PHONY install-%EXEC?exec:data%-am: install-%DIR%PYTHON
+ install-%DIR%PYTHON: $(%DIR%_PYTHON)
+
