@@ -14,18 +14,17 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.11.3
-Release:	2
+Version:	1.11.4
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	3d72b2076eb4397ad5e9a2aace6357fd
+# Source0-md5:	d1dd41acf56a30d8da7bf20c5ac223db
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
-Patch4:		%{name}-git.patch
 URL:		http://sources.redhat.com/automake/
 %if %{with bootstrap}
 BuildRequires:	autoconf >= 2.62
@@ -108,7 +107,6 @@ Makefile'ів.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %if %{without bootstrap}
 # prepare temporary copy of m4 dir without amversion.m4 (which causes automake version check)
