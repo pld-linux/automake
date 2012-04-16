@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with		bootstrap	# without full regeneration
+%bcond_with	bootstrap	# without full regeneration
 
 %include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
@@ -14,13 +14,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.11.4
+Version:	1.11.5
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	d1dd41acf56a30d8da7bf20c5ac223db
+# Source0-md5:	13f6a9522339ac0885110506cb7abad8
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
