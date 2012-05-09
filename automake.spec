@@ -14,13 +14,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.11.5
+Version:	1.12
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	13f6a9522339ac0885110506cb7abad8
+# Source0-md5:	5fc40c032ceaebecd1588b8d125b4781
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
@@ -141,27 +141,31 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 cp -a aclocal.1 automake.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
+# not needed when dir/files are handled by package system
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/aclocal/README
+
 rm -f $RPM_BUILD_ROOT%{_infodir}/dir*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README THANKS TODO
+%doc AUTHORS ChangeLog NEWS README THANKS
 %attr(755,root,root) %{_bindir}/aclocal*
 %attr(755,root,root) %{_bindir}/automake*
 %{_infodir}/automake.info*
+%{_infodir}/automake-history.info*
 %{_mandir}/man1/aclocal.1*
-%{_mandir}/man1/aclocal-1.11.1*
+%{_mandir}/man1/aclocal-1.12.1*
 %{_mandir}/man1/automake.1*
-%{_mandir}/man1/automake-1.11.1*
+%{_mandir}/man1/automake-1.12.1*
 
 %{_datadir}/aclocal-*
 %dir %{_datadir}/automake
@@ -170,13 +174,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/automake/COPYING
 %{_datadir}/automake/INSTALL
 %{_datadir}/automake/texinfo.tex
-%{_datadir}/automake/ansi2knr*
 %attr(755,root,root) %{_datadir}/automake/ar-lib
-%attr(755,root,root) %{_datadir}/automake/acinstall
 %attr(755,root,root) %{_datadir}/automake/compile
 %attr(755,root,root) %{_datadir}/automake/config.guess
 %attr(755,root,root) %{_datadir}/automake/config.sub
-%attr(755,root,root) %{_datadir}/automake/config-ml.in
 %attr(755,root,root) %{_datadir}/automake/depcomp
 %attr(755,root,root) %{_datadir}/automake/elisp-comp
 %attr(755,root,root) %{_datadir}/automake/install-sh
@@ -184,5 +185,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/automake/missing
 %attr(755,root,root) %{_datadir}/automake/mkinstalldirs
 %attr(755,root,root) %{_datadir}/automake/py-compile
-%attr(755,root,root) %{_datadir}/automake/symlink-tree
+%attr(755,root,root) %{_datadir}/automake/tap-driver.pl
+%attr(755,root,root) %{_datadir}/automake/tap-driver.sh
+%attr(755,root,root) %{_datadir}/automake/test-driver
 %attr(755,root,root) %{_datadir}/automake/ylwrap
