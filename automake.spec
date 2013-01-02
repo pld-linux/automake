@@ -14,28 +14,26 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.12.6
+Version:	1.13.1
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	140e084223bf463a24c1a28427c6aec7
+# Source0-md5:	a60380ab11e1481376b7747d1b42ced2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
 URL:		http://sources.redhat.com/automake/
-%if %{with bootstrap}
-BuildRequires:	autoconf >= 2.62
-%else
-BuildRequires:	autoconf >= 2.68
+BuildRequires:	autoconf >= 2.69
+%if %{without bootstrap}
 BuildRequires:	automake >= 1:1.10a
 %endif
 BuildRequires:	help2man
 BuildRequires:	rpm-perlprov
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	texinfo >= 4.7
+BuildRequires:	texinfo >= 4.9
 BuildRequires:	xz
 Requires(pre):	fileutils
 Requires:	filesystem >= 3.0-2
@@ -45,8 +43,9 @@ Requires:	perl(File::Glob)
 Requires:	perl(Thread::Queue)
 Requires:	perl(threads)
 %endif
-Conflicts:	autoconf < 2.60
+Conflicts:	autoconf < 2.65
 Conflicts:	libtool < 2:1.5-11
+Conflicts:	texinfo < 4.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -163,9 +162,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/automake.info*
 %{_infodir}/automake-history.info*
 %{_mandir}/man1/aclocal.1*
-%{_mandir}/man1/aclocal-1.12.1*
+%{_mandir}/man1/aclocal-1.13.1*
 %{_mandir}/man1/automake.1*
-%{_mandir}/man1/automake-1.12.1*
+%{_mandir}/man1/automake-1.13.1*
 
 %{_datadir}/aclocal-*
 %dir %{_datadir}/automake
@@ -179,7 +178,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/automake/config.guess
 %attr(755,root,root) %{_datadir}/automake/config.sub
 %attr(755,root,root) %{_datadir}/automake/depcomp
-%attr(755,root,root) %{_datadir}/automake/elisp-comp
 %attr(755,root,root) %{_datadir}/automake/install-sh
 %attr(755,root,root) %{_datadir}/automake/mdate-sh
 %attr(755,root,root) %{_datadir}/automake/missing
