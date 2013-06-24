@@ -14,13 +14,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.13.4
+Version:	1.14
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	71b03c1bc4f587add12604587d9276d1
+# Source0-md5:	cb3fba6d631cddf12e230fd0cc1890df
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
@@ -28,7 +28,7 @@ Patch3:		%{name}-morearchs.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.69
 %if %{without bootstrap}
-BuildRequires:	automake >= 1:1.11
+BuildRequires:	automake >= 1:1.14
 %endif
 BuildRequires:	help2man
 BuildRequires:	rpm-perlprov
@@ -162,11 +162,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/automake.info*
 %{_infodir}/automake-history.info*
 %{_mandir}/man1/aclocal.1*
-%{_mandir}/man1/aclocal-1.13.1*
+%{_mandir}/man1/aclocal-1.14.1*
 %{_mandir}/man1/automake.1*
-%{_mandir}/man1/automake-1.13.1*
+%{_mandir}/man1/automake-1.14.1*
 
-%{_datadir}/aclocal-*
+%{_datadir}/aclocal-1.14
 %dir %{_datadir}/automake
 %{_datadir}/automake/am
 %{_datadir}/automake/Automake
