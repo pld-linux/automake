@@ -14,13 +14,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.14.1
+Version:	1.15
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	7fc29854c520f56b07aa232a0f880292
+# Source0-md5:	9a1ddb0e053474d9d1105cfe39b0c48d
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
@@ -49,6 +49,7 @@ Conflicts:	texinfo < 4.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		ver_maj		%(echo %{version} | cut -d. -f1-2)
 %define		_enable_debug_packages	0
 
 %description
@@ -162,11 +163,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/automake.info*
 %{_infodir}/automake-history.info*
 %{_mandir}/man1/aclocal.1*
-%{_mandir}/man1/aclocal-1.14.1*
+%{_mandir}/man1/aclocal-%{ver_maj}.1*
 %{_mandir}/man1/automake.1*
-%{_mandir}/man1/automake-1.14.1*
+%{_mandir}/man1/automake-%{ver_maj}.1*
 
-%{_datadir}/aclocal-1.14
+%{_datadir}/aclocal-%{ver_maj}
 %dir %{_datadir}/automake
 %{_datadir}/automake/am
 %{_datadir}/automake/Automake
@@ -183,7 +184,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/automake/missing
 %attr(755,root,root) %{_datadir}/automake/mkinstalldirs
 %attr(755,root,root) %{_datadir}/automake/py-compile
-%attr(755,root,root) %{_datadir}/automake/tap-driver.pl
 %attr(755,root,root) %{_datadir}/automake/tap-driver.sh
 %attr(755,root,root) %{_datadir}/automake/test-driver
 %attr(755,root,root) %{_datadir}/automake/ylwrap
