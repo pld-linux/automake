@@ -15,7 +15,7 @@ Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
 Version:	1.15
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
@@ -127,8 +127,13 @@ ln -s ../m4/[!a]*.m4 ../m4/a[!m]*.m4 .
 # NOTE: _target macro becames "noarch" if ./builder passes --target=noarch, so
 # be sure use plain /usr/bin/rpmbuild.
 %configure \
+%if %{_host_cpu} == "x32"
+	--host=%{_target_platform} \
+	--build=%{_target_platform}
+%else
 	--host=%{_host} \
 	--build=%{_host}
+%endif
 %{__make}
 
 %install
