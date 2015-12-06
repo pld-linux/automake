@@ -15,7 +15,7 @@ Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
 Version:	1.15
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
@@ -25,6 +25,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		%{name}-morearchs.patch
+Patch4:		automake-1.15-perl-escape-curly-bracket.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.69
 %if %{without bootstrap}
@@ -107,6 +108,7 @@ Makefile'ів.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %if %{without bootstrap}
 # prepare temporary copy of m4 dir without amversion.m4 (which causes automake version check)
