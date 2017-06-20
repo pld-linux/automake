@@ -1,8 +1,8 @@
---- automake-1.9.6/lib/config.sub~	2005-07-10 17:16:04.000000000 +0000
-+++ automake-1.9.6/lib/config.sub	2006-02-12 14:02:11.000000000 +0000
-@@ -836,6 +836,12 @@
- 		;;
- 	ppc-*)	basic_machine=powerpc-`echo $basic_machine | sed 's/^[^-]*-//'`
+--- automake-1.15.1/lib/config.sub.orig	2017-06-20 16:43:35.596510193 +0200
++++ automake-1.15.1/lib/config.sub	2017-06-20 17:09:44.756492278 +0200
+@@ -1037,6 +1037,12 @@
+ 	ppc-* | ppcbe-*)
+ 		basic_machine=powerpc-`echo $basic_machine | sed 's/^[^-]*-//'`
  		;;
 +	ppc74[05]0)
 +		basic_machine=powerpc-unknown
@@ -10,6 +10,6 @@
 +	ppc74[05]0-*)
 +		basic_machine=powerpc-`echo $basic_machine | sed 's/^[^-]*-//'`
 +		;;
- 	ppcle | powerpclittle | ppc-le | powerpc-little)
+ 	ppcle | powerpclittle)
  		basic_machine=powerpcle-unknown
  		;;
