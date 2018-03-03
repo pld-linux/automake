@@ -14,13 +14,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.15.1
+Version:	1.16
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	24cd3501b6ad8cd4d7e2546f07e8b4d4
+# Source0-md5:	bfdf69ac36c327b3a59b83ab01057e30
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
@@ -126,16 +126,12 @@ ln -s ../m4/[!a]*.m4 ../m4/a[!m]*.m4 .
 %{__automake}
 %endif
 
-# NOTE: _target macro becames "noarch" if ./builder passes --target=noarch, so
-# be sure use plain /usr/bin/rpmbuild.
 %configure \
-%if %{_host_cpu} == "x32"
-	--host=%{_target_platform} \
-	--build=%{_target_platform}
-%else
+%if "%{_host_cpu}" != "x32"
 	--host=%{_host} \
-	--build=%{_host}
+	--build=%{_host} \
 %endif
+	--disable-silent-rules
 %{__make}
 
 %install
