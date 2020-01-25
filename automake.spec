@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	bootstrap	# without full regeneration
 
-%include	/usr/lib/rpm/macros.perl
 Summary:	GNU automake - Makefile configuration tools
 Summary(de.UTF-8):	GNU automake - Makefile-Konfigurationstools
 Summary(es.UTF-8):	GNU automake - herramientas de configuración de Makefile
