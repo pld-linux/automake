@@ -65,12 +65,12 @@
  * Macros::                      Autoconf macros supplied with Automake
  @end menu
  
-@@ -3119,11 +3115,11 @@
+@@ -3127,11 +3127,11 @@ appear as dependencies in @file{Makefile
  @code{m4_include} is seldom used by @file{configure.ac} authors, but
  can appear in @file{aclocal.m4} when @command{aclocal} detects that
  some required macros come from files local to your package (as opposed to
--macros installed in a system-wide directory, @pxref{aclocal Invocation}).
-+macros installed in a system-wide directory, @pxref{aclocal}).
+-macros installed in a system-wide directory; @pxref{aclocal Invocation}).
++macros installed in a system-wide directory; @pxref{aclocal}).
  
  @end ftable
  
@@ -99,13 +99,13 @@
  @file{configure.ac}, autoconf, The Autoconf Manual}).
  @emph{Do it NOW!}
  
-@@ -5453,7 +5449,7 @@
+@@ -5475,7 +5475,7 @@ aforementioned linking flags should be l
  passed to the tool invoked by @command{libtool} (hence the use of
  @samp{@var{library}_LDFLAGS} for libtool linking flags).  Generic
  options include @option{--tag=@var{tag}} and @option{--silent}
 -(@pxref{Invoking libtool, , Invoking @command{libtool}, libtool, The
 +(@pxref{libtool, , Invoking @command{libtool}, libtool, The
- Libtool Manual} for more options) should appear before the mode
+ Libtool Manual} for more options).  They should appear before the mode
  selection on the command line; in @file{Makefile.am}s they should
  be listed in the @samp{@var{library}_LIBTOOLFLAGS} variable.
 @@ -5526,7 +5522,7 @@

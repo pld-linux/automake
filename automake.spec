@@ -13,17 +13,17 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.16.1
+Version:	1.16.2
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	53f38e7591fa57c3d2cee682be668e5b
+# Source0-md5:	6cb234c86f3f984df29ce758e6d0d1d7
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
-Patch3:		%{name}-morearchs.patch
+
 Patch4:		revert-debian-python-hacks.patch
 URL:		http://sources.redhat.com/automake/
 BuildRequires:	autoconf >= 2.69
@@ -106,7 +106,7 @@ Makefile'ів.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
+
 %patch4 -p1
 
 %if %{without bootstrap}
