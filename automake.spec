@@ -13,13 +13,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.16.2
+Version:	1.16.3
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
-Source0:	http://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	6cb234c86f3f984df29ce758e6d0d1d7
+Source0:	https://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
+# Source0-md5:	c27f608a4e1f302ec7ce42f1251c184e
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
