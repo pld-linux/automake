@@ -144,3 +144,17 @@
  
  It is important to regenerate all of these files each time Automake is
  upgraded, even between bug fixes releases.  For instance, it is not
+--- automake-1.16.3/doc/automake-history.texi.orig	2020-11-19 02:21:03.000000000 +0100
++++ automake-1.16.3/doc/automake-history.texi	2021-01-10 12:24:21.033358854 +0100
+@@ -23,9 +23,9 @@
+ @end quotation
+ @end copying
+ 
+-@dircategory Software development
++@dircategory Programming tools:
+ @direntry
+-* Automake-history: (automake-history). History of Automake development.
++* Automake-history: (automake-history).	History of Automake development
+ @end direntry
+ 
+ @titlepage
