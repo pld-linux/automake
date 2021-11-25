@@ -13,13 +13,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.16.3
-Release:	2
+Version:	1.16.5
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	https://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	c27f608a4e1f302ec7ce42f1251c184e
+# Source0-md5:	4017e96f89fca45ca946f1c5db6be714
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
@@ -110,6 +110,8 @@ Makefile'ів.
 %patch4 -p1
 
 %if %{without bootstrap}
+%{__sed} -i -e '/AM_INIT_AUTOMAKE/ s/-Werror //' configure.ac
+
 # prepare temporary copy of m4 dir without amversion.m4 (which causes automake version check)
 mkdir m4-tmp
 cd m4-tmp
