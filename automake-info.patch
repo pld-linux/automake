@@ -1,6 +1,6 @@
---- automake-1.13.1/doc/automake.texi.orig	2013-01-01 12:50:13.000000000 +0100
-+++ automake-1.13.1/doc/automake.texi	2013-01-02 17:52:44.118274937 +0100
-@@ -36,15 +36,11 @@
+--- automake-1.16.5/doc/automake.texi.orig	2021-10-01 21:30:59.000000000 +0200
++++ automake-1.16.5/doc/automake.texi	2021-11-30 22:10:34.118232059 +0100
+@@ -38,15 +38,11 @@ section entitled ``GNU Free Documentatio
  @end quotation
  @end copying
  
@@ -20,7 +20,7 @@
  @end direntry
  
  @titlepage
-@@ -97,7 +93,7 @@
+@@ -102,7 +98,7 @@ section entitled ``GNU Free Documentatio
  * Autotools Introduction::      An Introduction to the Autotools
  * Generalities::                General ideas
  * Examples::                    Some example packages
@@ -29,7 +29,7 @@
  * configure::                   Scanning configure.ac, using aclocal
  * Directories::                 Declaring subdirectories
  * Programs::                    Building programs and libraries
-@@ -174,7 +170,7 @@
+@@ -178,7 +174,7 @@ Scanning @file{configure.ac}, using @com
  
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -38,7 +38,7 @@
  * Macros::                      Autoconf macros supplied with Automake
  
  Auto-generating aclocal.m4
-@@ -1680,7 +1676,7 @@
+@@ -1696,7 +1692,7 @@ registered with @code{AC_CONFIG_HEADERS}
  When starting a new project, we suggest you start with such a simple
  @file{configure.ac}, and gradually add the other tests it requires.
  The command @command{autoscan} can also suggest a few of the tests
@@ -47,7 +47,7 @@
  @command{autoscan} to Create @file{configure.ac}, autoconf, The
  Autoconf Manual}).
  
-@@ -2488,7 +2484,7 @@
+@@ -2583,7 +2579,7 @@ with different flags.  In this instance,
  would be chosen by automake; they would be @file{false-true.o} and
  @file{true-true.o}. (The name of the object files rarely matters.)
  
@@ -56,7 +56,7 @@
  @chapter Creating a @file{Makefile.in}
  @c This node used to be named "Invoking automake".  This @anchor
  @c allows old links to still work.
-@@ -2737,7 +2733,7 @@
+@@ -2851,7 +2847,7 @@ easier.  These macros can automatically
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -65,7 +65,7 @@
  * Macros::                      Autoconf macros supplied with Automake
  @end menu
  
-@@ -3127,11 +3127,11 @@ appear as dependencies in @file{Makefile
+@@ -3241,11 +3237,11 @@ appear as dependencies in @file{Makefile
  @code{m4_include} is seldom used by @file{configure.ac} authors, but
  can appear in @file{aclocal.m4} when @command{aclocal} detects that
  some required macros come from files local to your package (as opposed to
@@ -79,7 +79,7 @@
  @section Auto-generating aclocal.m4
  @c This node used to be named "Invoking automake".  This @anchor
  @c allows old links to still work.
-@@ -3308,7 +3304,7 @@
+@@ -3435,7 +3431,7 @@ All warnings are output by default.
  
  @vindex WARNINGS
  The environment variable @env{WARNINGS} is honored in the same
@@ -88,7 +88,7 @@
  
  @end table
  
-@@ -4056,8 +4052,8 @@
+@@ -4191,8 +4187,8 @@ Although using some of the following mac
  releases, you should not use any of them in new code.  @emph{All
  these macros will be removed in the next major Automake version};
  if you are still using them, running @command{autoupdate} should
@@ -99,7 +99,7 @@
  @file{configure.ac}, autoconf, The Autoconf Manual}).
  @emph{Do it NOW!}
  
-@@ -5475,7 +5475,7 @@ aforementioned linking flags should be l
+@@ -5585,7 +5581,7 @@ aforementioned linking flags should be l
  passed to the tool invoked by @command{libtool} (hence the use of
  @samp{@var{library}_LDFLAGS} for libtool linking flags).  Generic
  options include @option{--tag=@var{tag}} and @option{--silent}
@@ -108,7 +108,7 @@
  Libtool Manual} for more options).  They should appear before the mode
  selection on the command line; in @file{Makefile.am}s they should
  be listed in the @samp{@var{library}_LIBTOOLFLAGS} variable.
-@@ -5526,7 +5522,7 @@
+@@ -5658,7 +5654,7 @@ this issue because older Automake versio
  Since Automake 1.6, it has been decided that running
  @command{libtoolize} was none of Automake's business.  Instead, that
  functionality has been moved into the @command{autoreconf} command
@@ -116,8 +116,8 @@
 +(@pxref{autoreconf, , Using @command{autoreconf}, autoconf,
  The Autoconf Manual}).  If you do not want to remember what to run and
  when, just learn the @command{autoreconf} command.  Hopefully,
- replacing existing @file{bootstrap.sh} or @file{autogen.sh} scripts by
-@@ -10278,7 +10274,7 @@
+ replacing existing @file{bootstrap} or @file{autogen.sh} scripts by
+@@ -10712,7 +10708,7 @@ will be suppressed.
  @cindex Option, @option{-W@var{category}}
  @cindex Option, @option{--warnings=@var{category}}
  These options behave exactly like their command-line counterpart
@@ -126,7 +126,7 @@
  warning categories on a per-file basis.  You can also setup some warnings
  for your entire project; for instance, try @samp{AM_INIT_AUTOMAKE([-Wall])}
  in your @file{configure.ac}.
-@@ -11051,7 +11047,7 @@
+@@ -11439,7 +11435,7 @@ These overriding semantics make it possi
  settings of Automake, or replace some of its rules.  Overriding
  Automake rules is often inadvisable, particularly in the topmost
  directory of a package with subdirectories.  The @option{-Woverride}
@@ -135,7 +135,7 @@
  definitions.
  
  Note that Automake does not make any distinction between rules with
-@@ -11499,7 +11495,7 @@
+@@ -11896,7 +11892,7 @@ autoreconf -vfi
  @end example
  
  The use of @option{--force-missing} ensures that auxiliary tools will be
@@ -143,7 +143,7 @@
 +overridden by new versions (@pxref{automake}).
  
  It is important to regenerate all of these files each time Automake is
- upgraded, even between bug fixes releases.  For instance, it is not
+ upgraded, even between bug fix releases.  For instance, it is not
 --- automake-1.16.3/doc/automake-history.texi.orig	2020-11-19 02:21:03.000000000 +0100
 +++ automake-1.16.3/doc/automake-history.texi	2021-01-10 12:24:21.033358854 +0100
 @@ -23,9 +23,9 @@
