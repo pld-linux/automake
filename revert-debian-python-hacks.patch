@@ -6,11 +6,9 @@ Date:   Sun Apr 24 10:28:38 2016 +0200
     
     This reverts commit 1f113f6bc81edabbbda7e14d58b10ac02d7a1137.
 
-diff --git a/m4/python.m4 b/m4/python.m4
-index 32c30e2..5c58851 100644
---- a/m4/python.m4
-+++ b/m4/python.m4
-@@ -216,26 +216,6 @@ AC_DEFUN([AM_PATH_PYTHON],
+--- automake-1.17/m4/python.m4.orig	2024-08-24 10:30:55.673474729 +0200
++++ automake-1.17/m4/python.m4	2024-08-24 10:38:08.461130117 +0200
+@@ -219,40 +219,6 @@ AC_DEFUN([AM_PATH_PYTHON],
    # Substituting python_exec_prefix_subst.
    AC_SUBST([PYTHON_EXEC_PREFIX], [$am_python_exec_prefix_subst])
  
@@ -32,19 +30,37 @@ index 32c30e2..5c58851 100644
 -    if python_implementation() == 'CPython' and sys.version[[:3]] == '2.7':
 -        can_use_sysconfig = 0
 -except ImportError:
--    pass"
+-    pass" # end of am_python_setup_sysconfig
+-
+-  # More repeated code, for figuring out the installation scheme to use.
+-  am_python_setup_scheme="if hasattr(sysconfig, 'get_default_scheme'):
+-      scheme = sysconfig.get_default_scheme()
+-    else:
+-      scheme = sysconfig._get_default_scheme()
+-    if scheme == 'posix_local':
+-      if '$am_py_prefix' == '/usr':
+-        scheme = 'deb_system' # should only happen during Debian package builds
+-      else:
+-        # Debian's default scheme installs to /usr/local/ but we want to
+-        # follow the prefix, as we always have.
+-        # See bugs#54412, #64837, et al.
+-        scheme = 'posix_prefix'" # end of am_python_setup_scheme
 -
    dnl emacs-page Set up 4 directories:
  
    dnl 1. pythondir: where to install python scripts.  This is the
-@@ -251,14 +231,7 @@ except ImportError:
+@@ -268,18 +234,7 @@ except ImportError:
     else
       am_py_prefix=$am_cv_python_prefix
     fi
 -   am_cv_python_pythondir=`$PYTHON -c "
 -$am_python_setup_sysconfig
 -if can_use_sysconfig:
--  sitedir = sysconfig.get_path('purelib', vars={'base':'$am_py_prefix'})
+-  try:
+-    $am_python_setup_scheme
+-    sitedir = sysconfig.get_path('purelib', scheme, vars={'base':'$am_py_prefix'})
+-  except:
+-    sitedir = sysconfig.get_path('purelib', vars={'base':'$am_py_prefix'})
 -else:
 -  from distutils import sysconfig
 -  sitedir = sysconfig.get_python_lib(0, 0, prefix='$am_py_prefix')
@@ -53,14 +69,18 @@ index 32c30e2..5c58851 100644
     #
     case $am_cv_python_pythondir in
     $am_py_prefix*)
-@@ -293,14 +266,7 @@ sys.stdout.write(sitedir)"`
+@@ -315,18 +270,7 @@ sys.stdout.write(sitedir)"`
     else
       am_py_exec_prefix=$am_cv_python_exec_prefix
     fi
 -   am_cv_python_pyexecdir=`$PYTHON -c "
 -$am_python_setup_sysconfig
 -if can_use_sysconfig:
--  sitedir = sysconfig.get_path('platlib', vars={'platbase':'$am_py_exec_prefix'})
+-  try:
+-    $am_python_setup_scheme
+-    sitedir = sysconfig.get_path('platlib', scheme, vars={'platbase':'$am_py_exec_prefix'})
+-  except:
+-    sitedir = sysconfig.get_path('platlib', vars={'platbase':'$am_py_exec_prefix'})
 -else:
 -  from distutils import sysconfig
 -  sitedir = sysconfig.get_python_lib(1, 0, prefix='$am_py_exec_prefix')

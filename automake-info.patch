@@ -1,5 +1,5 @@
---- automake-1.16.5/doc/automake.texi.orig	2021-10-01 21:30:59.000000000 +0200
-+++ automake-1.16.5/doc/automake.texi	2021-11-30 22:10:34.118232059 +0100
+--- automake-1.17/doc/automake.texi.orig	2024-07-12 07:04:24.000000000 +0200
++++ automake-1.17/doc/automake.texi	2024-08-24 10:30:39.326896620 +0200
 @@ -38,15 +38,11 @@ section entitled ``GNU Free Documentatio
  @end quotation
  @end copying
@@ -37,8 +37,22 @@
 +* aclocal::                     Auto-generating aclocal.m4
  * Macros::                      Autoconf macros supplied with Automake
  
- Auto-generating aclocal.m4
-@@ -1696,7 +1692,7 @@ registered with @code{AC_CONFIG_HEADERS}
+ Auto-generating aclocal.m4: Invoking @command{aclocal}
+@@ -1598,11 +1594,11 @@ which order all of these tools should be
+ curious: the basic idea is to run:
+ 
+ @enumerate
+-@item @command{aclocal} (@pxref{aclocal Invocation}),
++@item @command{aclocal} (@pxref{aclocal}),
+ @item @command{autoconf} (@pxref{,,,autoconf, The Autoconf Manual}),
+ @item (if needed) @command{autoheader} (part of the
+ Autoconf distribution), and
+-@item @command{automake} (@pxref{automake Invocation}).
++@item @command{automake} (@pxref{automake}).
+ @end enumerate
+ 
+ @noindent
+@@ -1725,7 +1721,7 @@ registered with @code{AC_CONFIG_HEADERS}
  When starting a new project, we suggest you start with such a simple
  @file{configure.ac}, and gradually add the other tests it requires.
  The command @command{autoscan} can also suggest a few of the tests
@@ -47,16 +61,16 @@
  @command{autoscan} to Create @file{configure.ac}, autoconf, The
  Autoconf Manual}).
  
-@@ -2583,7 +2579,7 @@ with different flags.  In this instance,
+@@ -2612,7 +2608,7 @@ with different flags.  In this instance,
  would be chosen by automake; they would be @file{false-true.o} and
  @file{true-true.o}. (The name of the object files rarely matters.)
  
 -@node automake Invocation
 +@node automake
- @chapter Creating a @file{Makefile.in}
+ @chapter Creating a @file{Makefile.in}: Invoking @command{automake}
  @c This node used to be named "Invoking automake".  This @anchor
  @c allows old links to still work.
-@@ -2851,7 +2847,7 @@ easier.  These macros can automatically
+@@ -2880,7 +2876,7 @@ easier.  These macros can automatically
  @menu
  * Requirements::                Configuration requirements
  * Optional::                    Other things Automake recognizes
@@ -65,7 +79,7 @@
  * Macros::                      Autoconf macros supplied with Automake
  @end menu
  
-@@ -3241,11 +3237,11 @@ appear as dependencies in @file{Makefile
+@@ -3271,11 +3267,11 @@ appear as dependencies in @file{Makefile
  @code{m4_include} is seldom used by @file{configure.ac} authors, but
  can appear in @file{aclocal.m4} when @command{aclocal} detects that
  some required macros come from files local to your package (as opposed to
@@ -76,10 +90,19 @@
  
 -@node aclocal Invocation
 +@node aclocal
- @section Auto-generating aclocal.m4
- @c This node used to be named "Invoking automake".  This @anchor
+ @section Auto-generating aclocal.m4: Invoking @command{aclocal}
+ @c This node used to be named "Invoking aclocal".  This @anchor
  @c allows old links to still work.
-@@ -3435,7 +3431,7 @@ All warnings are output by default.
+@@ -3341,7 +3337,7 @@ overridden using the @env{AUTOM4TE} envi
+ 
+ In practice it is usually simpler to run @command{autoreconf} instead
+ of worrying about the required order of the various tools
+-(@pxref{autoreconf Invocation, , Using @command{autoreconf}, autoconf,
++(@pxref{autoreconf, , Using @command{autoreconf}, autoconf,
+ The Autoconf Manual}).
+ 
+ This section explains the details of @command{aclocal}.
+@@ -3489,7 +3485,7 @@ All warnings are output by default.
  
  @vindex WARNINGS
  The environment variable @env{WARNINGS} is honored in the same
@@ -88,7 +111,7 @@
  
  @end table
  
-@@ -4191,8 +4187,8 @@ Although using some of the following mac
+@@ -4240,8 +4236,8 @@ Although using some of the following mac
  releases, you should not use any of them in new code.  @emph{All
  these macros will be removed in the next major Automake version};
  if you are still using them, running @command{autoupdate} should
@@ -99,7 +122,7 @@
  @file{configure.ac}, autoconf, The Autoconf Manual}).
  @emph{Do it NOW!}
  
-@@ -5585,7 +5581,7 @@ aforementioned linking flags should be l
+@@ -5633,7 +5629,7 @@ aforementioned linking flags should be l
  passed to the tool invoked by @command{libtool} (hence the use of
  @samp{@var{library}_LDFLAGS} for libtool linking flags).  Generic
  options include @option{--tag=@var{tag}} and @option{--silent}
@@ -108,16 +131,27 @@
  Libtool Manual} for more options).  They should appear before the mode
  selection on the command line; in @file{Makefile.am}s they should
  be listed in the @samp{@var{library}_LIBTOOLFLAGS} variable.
-@@ -5658,7 +5654,7 @@ this issue because older Automake versio
+@@ -5707,7 +5703,7 @@ this issue because older Automake versio
  Since Automake 1.6, it has been decided that running
- @command{libtoolize} was none of Automake's business.  Instead, that
+ @command{libtoolize} was not Automake's business.  Instead, that
  functionality has been moved into the @command{autoreconf} command
 -(@pxref{autoreconf Invocation, , Using @command{autoreconf}, autoconf,
 +(@pxref{autoreconf, , Using @command{autoreconf}, autoconf,
- The Autoconf Manual}).  If you do not want to remember what to run and
- when, just learn the @command{autoreconf} command.  Hopefully,
- replacing existing @file{bootstrap} or @file{autogen.sh} scripts by
-@@ -10712,7 +10708,7 @@ will be suppressed.
+ The Autoconf Manual}).  The @command{autoreconf} command saves you
+ from having to figure out which infrastructure scripts to run in what
+ order.  Augmenting existing @file{bootstrap} or @file{autogen.sh}
+@@ -5727,8 +5723,8 @@ missing from @file{configure.ac}; it can
+ The second reason is more complicated: if you've installed Automake
+ under a separate prefix, Automake cannot know where to find the
+ @code{LT_INIT} macro.  Automake looks in the @file{aclocal.m4} file,
+-which is generated by the @command{aclocal} command (@pxref{aclocal
+-Invocation}). But since the default search paths for @command{aclocal}
++which is generated by the @command{aclocal} command (@pxref{aclocal}).
++But since the default search paths for @command{aclocal}
+ are based on where it is installed (@pxref{Macro Search Path}), if
+ Automake is installed in one place (e.g., because it's for a test
+ release), and Libtool in another (e.g., for general system use),
+@@ -11202,7 +11198,7 @@ will be suppressed.
  @cindex Option, @option{-W@var{category}}
  @cindex Option, @option{--warnings=@var{category}}
  These options behave exactly like their command-line counterpart
@@ -126,7 +160,7 @@
  warning categories on a per-file basis.  You can also setup some warnings
  for your entire project; for instance, try @samp{AM_INIT_AUTOMAKE([-Wall])}
  in your @file{configure.ac}.
-@@ -11439,7 +11435,7 @@ These overriding semantics make it possi
+@@ -12010,7 +12006,7 @@ These overriding semantics make it possi
  settings of Automake, or replace some of its rules.  Overriding
  Automake rules is often inadvisable, particularly in the topmost
  directory of a package with subdirectories.  The @option{-Woverride}
@@ -135,7 +169,7 @@
  definitions.
  
  Note that Automake does not make any distinction between rules with
-@@ -11896,7 +11892,7 @@ autoreconf -vfi
+@@ -12466,7 +12462,7 @@ autoreconf -vfi
  @end example
  
  The use of @option{--force-missing} ensures that auxiliary tools will be
@@ -144,17 +178,3 @@
  
  It is important to regenerate all of these files each time Automake is
  upgraded, even between bug fix releases.  For instance, it is not
---- automake-1.16.3/doc/automake-history.texi.orig	2020-11-19 02:21:03.000000000 +0100
-+++ automake-1.16.3/doc/automake-history.texi	2021-01-10 12:24:21.033358854 +0100
-@@ -23,9 +23,9 @@
- @end quotation
- @end copying
- 
--@dircategory Software development
-+@dircategory Programming tools:
- @direntry
--* Automake-history: (automake-history). History of Automake development.
-+* Automake-history: (automake-history).	History of Automake development
- @end direntry
- 
- @titlepage

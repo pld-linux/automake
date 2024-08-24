@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	bootstrap	# without full regeneration
+%bcond_with	bootstrap	# no full regeneration, for bootstrapping new version
 
 Summary:	GNU automake - Makefile configuration tools
 Summary(de.UTF-8):	GNU automake - Makefile-Konfigurationstools
@@ -13,22 +13,22 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.16.5
-Release:	3
+Version:	1.17
+Release:	0.1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	https://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	4017e96f89fca45ca946f1c5db6be714
+# Source0-md5:	7ab3a02318fee6f5bd42adfc369abf10
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		revert-debian-python-hacks.patch
 Patch4:		python-3.10.patch
-URL:		http://sources.redhat.com/automake/
-BuildRequires:	autoconf >= 2.69
+URL:		http://www.gnu.org/software/automake/
+BuildRequires:	autoconf >= 2.72
 %if %{without bootstrap}
-BuildRequires:	automake >= 1:1.14
+BuildRequires:	automake >= 1:1.17
 %endif
 BuildRequires:	help2man
 BuildRequires:	rpm-perlprov
