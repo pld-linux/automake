@@ -32,6 +32,7 @@ BuildRequires:	automake >= 1:1.18
 %endif
 BuildRequires:	help2man
 BuildRequires:	rpm-perlprov
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	texinfo >= 4.9
 BuildRequires:	xz
