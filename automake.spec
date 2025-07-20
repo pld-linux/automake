@@ -14,7 +14,7 @@ Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
 Version:	1.18
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
@@ -25,6 +25,7 @@ Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
 Patch3:		revert-debian-python-hacks.patch
 Patch4:		python-3.10.patch
+Patch5:		%{name}-python2.patch
 URL:		http://www.gnu.org/software/automake/
 BuildRequires:	autoconf >= 2.72
 %if %{without bootstrap}
@@ -109,6 +110,7 @@ Makefile'ів.
 %patch -P2 -p1
 %patch -P3 -p1
 %patch -P4 -p1
+%patch -P5 -p1
 
 %if %{without bootstrap}
 %{__sed} -i -e '/AM_INIT_AUTOMAKE/ s/-Werror //' configure.ac

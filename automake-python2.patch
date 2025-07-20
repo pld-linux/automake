@@ -1,0 +1,12 @@
+Python 2.7 prints version to stderr, not stdout
+--- automake-1.18/lib/py-compile.orig	2025-02-09 18:32:16.000000000 +0100
++++ automake-1.18/lib/py-compile	2025-07-20 19:45:52.624357636 +0200
+@@ -35,7 +35,7 @@ me=py-compile
+ 
+ # People apparently set PYTHON=: and expect the result to be true.
+ # For the same reason, we output to stdout instead of stderr. Bizarre.
+-if $PYTHON -V 2>/dev/null | grep -i python >/dev/null; then :; else
++if $PYTHON -V 2>&1 | grep -i python >/dev/null; then :; else
+   echo "$me: Invalid python executable (according to -V): $PYTHON"
+   echo "$me: Python support disabled"
+   if test x"$PYTHON" = xfalse; then
