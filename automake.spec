@@ -13,13 +13,13 @@ Summary(ru.UTF-8):	GNU automake - инструменты для автомати
 Summary(tr.UTF-8):	Makefile yapılandırma araçları
 Summary(uk.UTF-8):	GNU automake - інструменти для автоматичної генерації Makefile'ів
 Name:		automake
-Version:	1.18.1
+Version:	1.19
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Development/Building
 Source0:	https://ftp.gnu.org/gnu/automake/%{name}-%{version}.tar.xz
-# Source0-md5:	cea31dbf1120f890cbf2a3032cfb9a68
+# Source0-md5:	da9b5c852b94089c7b7b16071ce8803c
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-man.patch
 Patch2:		%{name}-no_versioned_dir.patch
@@ -29,7 +29,7 @@ Patch5:		%{name}-python2.patch
 URL:		http://www.gnu.org/software/automake/
 BuildRequires:	autoconf >= 2.72
 %if %{without bootstrap}
-BuildRequires:	automake >= 1:1.18
+BuildRequires:	automake >= 1:1.19
 %endif
 BuildRequires:	help2man
 BuildRequires:	rpm-perlprov
